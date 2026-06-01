@@ -1,0 +1,193 @@
+openapi: 3.1.0
+info:
+  title: LOS API Student CRUD Contract
+  version: 0.1.0
+  description: |
+    Design-time contract for the student CRUD endpoints implemented by the FastAPI
+    service in this repository. Runtime-generated OpenAPI should match this file
+    once the architectural refactor and test suite are complete.
+servers:
+  - url: http://localhost:8000
+tags:
+  - name: students
+    description: Student CRUD operations
+paths:
+  /students:
+    post:
+      tags: [students]
+      summary: Create a student
+      operationId: createStudent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StudentCreate'
+            examples:
+              valid:
+                value:
+                  name: Alice
+      responses:
+        '201':
+          description: Student created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudentRead'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+    get:
+      tags: [students]
+      summary: List students
+      operationId: listStudents
+      responses:
+        '200':
+          description: Ordered list of students
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StudentRead'
+  /students/{student_id}:
+    get:
+      tags: [students]
+      summary: Get a student by id
+      operationId: getStudent
+      parameters:
+        - $ref: '#/components/parameters/StudentId'
+      responses:
+        '200':
+          description: Student found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudentRead'
+        '404':
+          description: Student not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid path parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+    put:
+      tags: [students]
+      summary: Update a student name
+      operationId: updateStudent
+      parameters:
+        - $ref: '#/components/parameters/StudentId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StudentUpdate'
+      responses:
+        '200':
+          description: Student updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudentRead'
+        '404':
+          description: Student not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+    delete:
+      tags: [students]
+      summary: Delete a student
+      operationId: deleteStudent
+      parameters:
+        - $ref: '#/components/parameters/StudentId'
+      responses:
+        '204':
+          description: Student deleted successfully
+        '404':
+          description: Student not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid path parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+components:
+  parameters:
+    StudentId:
+      name: student_id
+      in: path
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+      description: Numeric identifier of the student
+  schemas:
+    StudentCreate:
+      type: object
+      additionalProperties: false
+      required: [name]
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 255
+          description: Student name after trimming whitespace
+    StudentUpdate:
+      type: object
+      additionalProperties: false
+      required: [name]
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 255
+          description: Updated student name after trimming whitespace
+    StudentRead:
+      type: object
+      additionalProperties: false
+      required: [id, name]
+      properties:
+        id:
+          type: integer
+          minimum: 1
+        name:
+          type: string
+          minLength: 1
+          maxLength: 255
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      required: [detail]
+      properties:
+        detail:
+          type: string
+    ValidationErrorResponse:
+      type: object
+      additionalProperties: true
+      required: [detail]
+      properties:
+        detail:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
