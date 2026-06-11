@@ -3,8 +3,15 @@ from sqlalchemy.orm import Mapped, mapped_column
 
 from app.database import Base
 
+from sqlalchemy import Integer, String, UniqueConstraint
+from sqlalchemy.orm import Mapped, mapped_column
+
+from app.database import Base
+
+
 class Classroom(Base):
     __tablename__ = "classroom"
+    __table_args__ = (UniqueConstraint("start_year", "end_year", name="uq_classroom_start_end"),)
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
 
