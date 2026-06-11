@@ -1,6 +1,6 @@
 # LOS API MVP
 
-Minimal FastAPI API with PostgreSQL and Docker, exposing full CRUD for the `student` table.
+Minimal FastAPI API with PostgreSQL and Docker, exposing CRUD for `student` and `classroom` tables.
 
 ## Student table
 
@@ -30,9 +30,9 @@ The API will be available at `http://localhost:8000`.
 - `GET /students/{student_id}`
 - `PUT /students/{student_id}`
 - `DELETE /students/{student_id}`
-- `POST /classrooms`  — creates a classroom (returns 409 if the same `start_year`+`end_year` already exists)
+- `POST /classrooms`  — returns 409 if the same `start_year`+`end_year` already exists
 - `GET /classrooms`
-- `PUT /classrooms/{classroom_id}`
+- `PUT /classrooms/{classroom_id}` — returns 409 if another classroom already has the same `start_year`+`end_year`
 - `DELETE /classrooms/{classroom_id}`
 
 ## Example payload
@@ -54,7 +54,14 @@ Create / Update classroom JSON:
 }
 ```
 
-When creating a classroom the API validates whether a classroom for the same `start_year` and `end_year` already exists. If it does, the request returns HTTP 409 Conflict with a message: `"A classroom for that period already exists"`.
+The API enforces uniqueness for classroom period (`start_year` + `end_year`) on both create and update:
+
+- Create (`POST /classrooms`): if the same period already exists, returns HTTP 409 Conflict.
+- Update (`PUT /classrooms/{classroom_id}`): if another classroom already uses the same period, returns HTTP 409 Conflict.
+
+Conflict message:
+
+`"A classroom for that period already exists"`
 
 ## Example requests
 

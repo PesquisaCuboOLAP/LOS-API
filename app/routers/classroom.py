@@ -42,12 +42,28 @@ def create_classroom(payload: ClassroomCreate, db: Session = Depends(get_db)):
 def list_classrooms(db: Session = Depends(get_db)):
     return db.query(Classroom).order_by(Classroom.id.asc()).all()
 
-@router.put("/{classroom_id}", response_model=ClassroomRead)
+@router.put("/{classroom_id}", response_model=ClassroomRead)s
 def update_classroom(classroom_id: int, payload: ClassroomUpdate, db: Session = Depends(get_db)):
     classroom = db.get(Classroom, classroom_id)
 
     if classroom is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Classroom not found")
+
+    duplicate = (
+        db.query(Classroom)
+        .filter(
+            Classroom.id != classroom_id,
+            Classroom.start_year == payload.start_year,
+            Classroom.end_year == payload.end_year,
+        )
+        .first()
+    )
+
+    if duplicate is not None:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="A classroom for that period already exists",
+        )
 
     classroom.start_year = payload.start_year
     classroom.end_year = payload.end_year
