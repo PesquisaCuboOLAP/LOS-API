@@ -42,7 +42,7 @@ def create_classroom(payload: ClassroomCreate, db: Session = Depends(get_db)):
 def list_classrooms(db: Session = Depends(get_db)):
     return db.query(Classroom).order_by(Classroom.id.asc()).all()
 
-@router.put("/{classroom_id}", response_model=ClassroomRead)s
+@router.put("/{classroom_id}", response_model=ClassroomRead)
 def update_classroom(classroom_id: int, payload: ClassroomUpdate, db: Session = Depends(get_db)):
     classroom = db.get(Classroom, classroom_id)
 
