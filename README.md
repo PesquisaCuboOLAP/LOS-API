@@ -7,6 +7,13 @@ Minimal FastAPI API with PostgreSQL and Docker, exposing full CRUD for the `stud
 - `id`
 - `name`
 
+## Classroom table
+
+- `id`
+- `start_year` (YYYY)
+- `end_year` (YYYY)
+- `name` (derived `"{start_year}-{end_year}"`)
+
 ## Run with Docker
 
 ```bash
@@ -23,6 +30,10 @@ The API will be available at `http://localhost:8000`.
 - `GET /students/{student_id}`
 - `PUT /students/{student_id}`
 - `DELETE /students/{student_id}`
+- `POST /classrooms`  — creates a classroom (returns 409 if the same `start_year`+`end_year` already exists)
+- `GET /classrooms`
+- `PUT /classrooms/{classroom_id}`
+- `DELETE /classrooms/{classroom_id}`
 
 ## Example payload
 
@@ -31,6 +42,19 @@ The API will be available at `http://localhost:8000`.
   "name": "Alice"
 }
 ```
+
+## Classroom payload
+
+Create / Update classroom JSON:
+
+```json
+{
+  "start_year": "2024",
+  "end_year": "2025"
+}
+```
+
+When creating a classroom the API validates whether a classroom for the same `start_year` and `end_year` already exists. If it does, the request returns HTTP 409 Conflict with a message: `"A classroom for that period already exists"`.
 
 ## Example requests
 
@@ -47,6 +71,22 @@ curl -X PUT http://localhost:8000/students/1 \
   -d '{"name":"Alice Updated"}'
 
 curl -X DELETE http://localhost:8000/students/1
+```
+
+## Classroom example requests
+
+```bash
+curl -X POST http://localhost:8000/classrooms \
+  -H "Content-Type: application/json" \
+  -d '{"start_year":"2024","end_year":"2025"}'
+
+curl http://localhost:8000/classrooms
+
+curl -X PUT http://localhost:8000/classrooms/1 \
+  -H "Content-Type: application/json" \
+  -d '{"start_year":"2024","end_year":"2026"}'
+
+curl -X DELETE http://localhost:8000/classrooms/1
 ```
 
 ## Run locally without Docker
