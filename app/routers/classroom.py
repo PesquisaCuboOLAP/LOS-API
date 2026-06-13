@@ -202,8 +202,14 @@ def delete_class(classroom_id: int, db: Session = Depends(get_db)):
 
     if classroom is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Classroom not found")
+    
+    has_students = (
+        db.query(Student)
+        .filter(Student.classroom_id == classroom_id)
+        .first()
+    )
 
-    if classroom.students:
+    if has_students:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail="Cannot delete a classroom with assigned students",
