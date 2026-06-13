@@ -18,7 +18,7 @@ def create_student(payload: StudentCreate, db: Session = Depends(get_db)):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Classroom not found")
 
     student = Student(
-        name=payload.name, 
+        name=payload.name.strip(), 
         classroom_id=classroom.id
     )
     

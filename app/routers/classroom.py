@@ -15,7 +15,7 @@ router = APIRouter(prefix="/classrooms", tags=["classrooms"])
 
 def _parse_student_import_csv(file: UploadFile) -> tuple[list[str], int]:
     try:
-        content = file.file.read().decode("utf-8-sig")
+        content = file.file.read().decode("utf-8")
     except UnicodeDecodeError as exc:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -35,6 +35,11 @@ def _parse_student_import_csv(file: UploadFile) -> tuple[list[str], int]:
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Invalid CSV file format",
         )
+    
+    reader.fieldnames = [
+        field.strip() if field else field
+        for field in reader.fieldnames
+    ]
 
     normalized_headers = {header.strip() for header in reader.fieldnames if header}
     required_headers = {"name"}
@@ -57,12 +62,6 @@ def _parse_student_import_csv(file: UploadFile) -> tuple[list[str], int]:
 
         raw_name = row.get("name")
         name = raw_name.strip() if isinstance(raw_name, str) else ""
-
-        if not name:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail=f"Invalid CSV row at line {reader.line_num}: missing required field 'name'",
-            )
 
         student_names.append(name)
 
