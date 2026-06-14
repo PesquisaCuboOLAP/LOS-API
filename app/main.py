@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from app.database import Base, engine
+from app.models import Challenge, Classroom, LearningObjective, Student
 from app.routers.students import router as students_router
 from app.routers.classroom import router as classroom_router
 
