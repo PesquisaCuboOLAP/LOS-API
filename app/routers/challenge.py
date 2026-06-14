@@ -10,6 +10,10 @@ from app.schemas.challenge import ChallengeCreate, ChallengeRead, ChallengeUpdat
 router = APIRouter(prefix="/challenges", tags=["challenges"])
 
 
+def _find_challenge_by_name(name: str, db: Session) -> Challenge | None:
+    return db.query(Challenge).filter(Challenge.name == name).first()
+
+
 def _validate_learning_objective_ids(ids: list[int], db: Session) -> None:
     unique_ids = set(ids)
     if not unique_ids:
@@ -33,10 +37,19 @@ def _validate_learning_objective_ids(ids: list[int], db: Session) -> None:
 
 @router.post("", response_model=ChallengeRead, status_code=status.HTTP_201_CREATED)
 def create_challenge(payload: ChallengeCreate, db: Session = Depends(get_db)):
+    normalized_name = payload.name.strip()
+
+    existing = _find_challenge_by_name(normalized_name, db)
+    if existing is not None:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Challenge already exists",
+        )
+
     _validate_learning_objective_ids(payload.learning_objective_ids, db)
 
     challenge = Challenge(
-        name=payload.name.strip(),
+        name=normalized_name,
         semester=payload.semester,
         learning_objective_ids=payload.learning_objective_ids,
     )
@@ -75,9 +88,17 @@ def update_challenge(
             detail="Challenge not found",
         )
 
+    normalized_name = payload.name.strip()
+    duplicate = _find_challenge_by_name(normalized_name, db)
+    if duplicate is not None and duplicate.id != challenge_id:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Challenge already exists",
+        )
+
     _validate_learning_objective_ids(payload.learning_objective_ids, db)
 
-    challenge.name = payload.name.strip()
+    challenge.name = normalized_name
     challenge.semester = payload.semester
     challenge.learning_objective_ids = payload.learning_objective_ids
 

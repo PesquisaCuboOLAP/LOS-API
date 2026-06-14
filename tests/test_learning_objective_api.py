@@ -1,7 +1,9 @@
 import pytest
 
+from app.models.challenge import Challenge, Semester
 from app.models.classroom import Classroom
 from app.models.goal_short_name import GoalShortName, Strand
+from app.models.learning_objective import LearningObjective
 
 
 def _seed_classroom(db_session) -> Classroom:
@@ -118,3 +120,166 @@ def test_learning_objective_create_validates_related_entities(
 
     assert response.status_code == 404
     assert response.json()["detail"] == expected_detail
+
+
+def test_import_learning_objectives_creates_missing_goal_short_names_and_updates_challenges(
+    client,
+    db_session,
+):
+    classroom = _seed_classroom(db_session)
+    existing_goal_short_name = GoalShortName(name="Business", strand=Strand.MARKETING)
+    existing_challenge = Challenge(
+        name="Produto IA",
+        semester=Semester.FIRST,
+        learning_objective_ids=[],
+    )
+    db_session.add_all([existing_goal_short_name, existing_challenge])
+    db_session.commit()
+
+    csv_content = "\n".join(
+        [
+            "Code,Learning Strand,Goal Short Name,Learning Objective,Learning Objective Keywords,Challenge",
+            "MK-BUS-001,Marketing,Business,Forecast team expenses,Cost AI,Residência",
+            "MK-APP-001,Marketing,App Store,Write product metadata,Metadata,Produto IA",
+        ]
+    )
+
+    response = client.post(
+        f"/classrooms/{classroom.id}/learning-objectives/import/1",
+        files={"file": ("learning-objectives.csv", csv_content, "text/csv")},
+    )
+
+    assert response.status_code == 201
+    summary = response.json()
+    assert summary == {
+        "classroom_id": classroom.id,
+        "semester": 1,
+        "total_rows": 2,
+        "imported_goal_short_names": 1,
+        "reused_goal_short_names": 1,
+        "imported_learning_objectives": 2,
+        "skipped_duplicate_learning_objectives": 0,
+        "skipped_duplicate_rows_in_file": 0,
+        "created_challenges": 1,
+        "updated_challenges": 1,
+        "skipped_empty_rows": 0,
+    }
+
+    goal_short_names = db_session.query(GoalShortName).order_by(GoalShortName.name.asc()).all()
+    assert [(item.name, item.strand) for item in goal_short_names] == [
+        ("App Store", Strand.MARKETING),
+        ("Business", Strand.MARKETING),
+    ]
+
+    learning_objectives = (
+        db_session.query(LearningObjective)
+        .filter(LearningObjective.classroom_id == classroom.id)
+        .order_by(LearningObjective.code.asc())
+        .all()
+    )
+    assert [item.code for item in learning_objectives] == ["MK-APP-001", "MK-BUS-001"]
+
+    produto_ia = db_session.query(Challenge).filter(Challenge.name == "Produto IA").first()
+    residencia = db_session.query(Challenge).filter(Challenge.name == "Residência").first()
+
+    assert produto_ia is not None
+    assert produto_ia.semester == Semester.FIRST
+    assert produto_ia.learning_objective_ids == [
+        next(item.id for item in learning_objectives if item.code == "MK-APP-001")
+    ]
+
+    assert residencia is not None
+    assert residencia.semester == Semester.FIRST
+    assert residencia.learning_objective_ids == [
+        next(item.id for item in learning_objectives if item.code == "MK-BUS-001")
+    ]
+
+
+def test_import_learning_objectives_is_idempotent_for_existing_codes(client, db_session):
+    classroom = _seed_classroom(db_session)
+
+    csv_content = "\n".join(
+        [
+            "Code,Learning Strand,Goal Short Name,Learning Objective,Learning Objective Keywords,Challenge",
+            "MK-BUS-001,Marketing,Business,Forecast team expenses,Cost AI,Residência",
+            "MK-APP-001,Marketing,App Store,Write product metadata,Metadata,Produto IA",
+        ]
+    )
+
+    first_response = client.post(
+        f"/classrooms/{classroom.id}/learning-objectives/import/1",
+        files={"file": ("learning-objectives.csv", csv_content, "text/csv")},
+    )
+
+    assert first_response.status_code == 201
+
+    second_response = client.post(
+        f"/classrooms/{classroom.id}/learning-objectives/import/1",
+        files={"file": ("learning-objectives.csv", csv_content, "text/csv")},
+    )
+
+    assert second_response.status_code == 201
+    summary = second_response.json()
+    assert summary["imported_learning_objectives"] == 0
+    assert summary["skipped_duplicate_learning_objectives"] == 2
+    assert summary["created_challenges"] == 0
+    assert summary["updated_challenges"] == 0
+
+    learning_objectives = (
+        db_session.query(LearningObjective)
+        .filter(LearningObjective.classroom_id == classroom.id)
+        .all()
+    )
+    assert len(learning_objectives) == 2
+
+    produto_ia = db_session.query(Challenge).filter(Challenge.name == "Produto IA").first()
+    residencia = db_session.query(Challenge).filter(Challenge.name == "Residência").first()
+    assert produto_ia is not None
+    assert residencia is not None
+    assert len(produto_ia.learning_objective_ids) == 1
+    assert len(residencia.learning_objective_ids) == 1
+
+
+def test_import_learning_objectives_rejects_challenge_semester_conflicts(client, db_session):
+    classroom = _seed_classroom(db_session)
+    challenge = Challenge(
+        name="Produto IA",
+        semester=Semester.SECOND,
+        learning_objective_ids=[],
+    )
+    db_session.add(challenge)
+    db_session.commit()
+
+    csv_content = "\n".join(
+        [
+            "Code,Learning Strand,Goal Short Name,Learning Objective,Learning Objective Keywords,Challenge",
+            "MK-APP-001,Marketing,App Store,Write product metadata,Metadata,Produto IA",
+        ]
+    )
+
+    response = client.post(
+        f"/classrooms/{classroom.id}/learning-objectives/import/1",
+        files={"file": ("learning-objectives.csv", csv_content, "text/csv")},
+    )
+
+    assert response.status_code == 409
+    assert response.json()["detail"] == "Challenge already exists with a different semester: Produto IA"
+
+
+def test_import_learning_objectives_rejects_invalid_learning_strands(client, db_session):
+    classroom = _seed_classroom(db_session)
+
+    csv_content = "\n".join(
+        [
+            "Code,Learning Strand,Goal Short Name,Learning Objective,Learning Objective Keywords,Challenge",
+            "MK-APP-001,Unknown,App Store,Write product metadata,Metadata,Produto IA",
+        ]
+    )
+
+    response = client.post(
+        f"/classrooms/{classroom.id}/learning-objectives/import/1",
+        files={"file": ("learning-objectives.csv", csv_content, "text/csv")},
+    )
+
+    assert response.status_code == 400
+    assert response.json()["detail"] == "Invalid learning strand at row 2: Unknown"

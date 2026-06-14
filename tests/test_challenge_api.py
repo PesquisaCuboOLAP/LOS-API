@@ -101,3 +101,30 @@ def test_challenge_create_rejects_missing_learning_objective_ids(client):
     assert response.json()["detail"] == {
         "missing_learning_objective_ids": [999, 1000]
     }
+
+
+def test_challenge_name_must_be_unique(client, db_session):
+    learning_objective = _seed_learning_objective(db_session, "7")
+
+    first_response = client.post(
+        "/challenges",
+        json={
+            "name": "Unique Challenge",
+            "semester": 1,
+            "learning_objective_ids": [learning_objective.id],
+        },
+    )
+
+    assert first_response.status_code == 201
+
+    duplicate_response = client.post(
+        "/challenges",
+        json={
+            "name": "Unique Challenge",
+            "semester": 2,
+            "learning_objective_ids": [learning_objective.id],
+        },
+    )
+
+    assert duplicate_response.status_code == 409
+    assert duplicate_response.json()["detail"] == "Challenge already exists"

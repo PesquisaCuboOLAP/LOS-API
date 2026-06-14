@@ -16,7 +16,7 @@ class Challenge(Base):
     __tablename__ = "challenge"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
-    name: Mapped[str] = mapped_column(Text, nullable=False)
+    name: Mapped[str] = mapped_column(Text, nullable=False, unique=True)
     semester: Mapped[Semester] = mapped_column(
         SQLEnum(Semester),
         nullable=True

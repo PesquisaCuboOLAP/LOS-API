@@ -42,6 +42,37 @@ Rules:
 
 Example CSV file: [examples/students_import.csv](examples/students_import.csv)
 
+## Import learning objectives from CSV
+
+You can bulk import learning objectives into a classroom with:
+
+`POST /classrooms/{classroom_id}/learning-objectives/import/{semester}`
+
+Example:
+
+`POST /classrooms/1/learning-objectives/import/1`
+
+The endpoint expects a CSV upload with these required headers:
+
+```csv
+Code,Learning Strand,Goal Short Name,Learning Objective,Learning Objective Keywords,Challenge
+```
+
+Rules:
+
+- The classroom must exist.
+- The `semester` route parameter must be a valid challenge semester (`1` to `4`).
+- Missing goal short names are created automatically.
+- Existing goal short names are reused, but the import fails with HTTP 409 if the CSV strand conflicts with the stored strand for that goal short name.
+- Learning objectives are imported into the classroom from the route.
+- Existing learning objectives in that same classroom are skipped by `code`, so the import is safe to repeat.
+- Duplicate learning objective codes later in the same CSV file are skipped.
+- Challenges are created or updated by unique `name` using the `Challenge` CSV column.
+- If an existing challenge has `semester = null`, the import sets it from the route parameter.
+- If an existing challenge already has a different semester, the import fails with HTTP 409.
+
+The response returns an import summary with counts for created goal short names, imported learning objectives, skipped duplicates, and created or updated challenges.
+
 ## Run with Docker
 
 ```bash
@@ -62,6 +93,10 @@ The API will be available at `http://localhost:8000`.
 - `GET /classrooms`
 - `PUT /classrooms/{classroom_id}` — returns 409 if another classroom already has the same `start_year`+`end_year`
 - `DELETE /classrooms/{classroom_id}`
+- `POST /classrooms/{classroom_id}/students/import`
+- `POST /classrooms/{classroom_id}/learning-objectives/import/{semester}`
+- `POST /goal-short-names` — returns 409 if the name already exists
+- `POST /challenges` — returns 409 if the name already exists
 
 ## Example payload
 
@@ -134,6 +169,9 @@ Deleting a classroom that still has students returns HTTP 409 Conflict.
 ```bash
 curl -X POST http://localhost:8000/classrooms/1/students/import \
   -F "file=@examples/students_import.csv"
+
+curl -X POST http://localhost:8000/classrooms/1/learning-objectives/import/1 \
+  -F "file=@examples/25_26\ LG_LO\ [new]-All\ -\ Challenge\ (1).csv"
 ```
 
 ## Run locally without Docker
@@ -146,3 +184,7 @@ curl -X POST http://localhost:8000/classrooms/1/students/import \
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
+
+## Existing databases
+
+The app currently creates tables with SQLAlchemy `create_all` on startup and does not use Alembic migrations yet. New constraints such as the unique challenge name constraint are applied automatically in fresh environments and in tests, but they are not retrofitted onto an already-created database table. If you already have a local database created before this change, recreate it or apply the constraint manually before relying on the import behavior.
