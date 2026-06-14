@@ -6,8 +6,10 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models.classroom import Classroom
+from app.models.learning_objective import LearningObjective
 from app.models.student import Student
 from app.schemas.classroom import ClassroomCreate, ClassroomRead, ClassroomUpdate
+from app.schemas.learning_objective import LearningObjectiveRead
 from app.schemas.student import StudentImportSummary, StudentRead
 
 router = APIRouter(prefix="/classrooms", tags=["classrooms"])
@@ -107,6 +109,27 @@ def create_classroom(payload: ClassroomCreate, db: Session = Depends(get_db)):
 @router.get("", response_model=list[ClassroomRead])
 def list_classrooms(db: Session = Depends(get_db)):
     return db.query(Classroom).order_by(Classroom.id.asc()).all()
+
+
+@router.get("/{classroom_id}/learning-objectives", response_model=list[LearningObjectiveRead])
+def list_classroom_learning_objectives(
+    classroom_id: int,
+    db: Session = Depends(get_db),
+):
+    classroom = db.get(Classroom, classroom_id)
+
+    if classroom is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Classroom not found",
+        )
+
+    return (
+        db.query(LearningObjective)
+        .filter(LearningObjective.classroom_id == classroom_id)
+        .order_by(LearningObjective.id.asc())
+        .all()
+    )
 
 @router.get("/{classroom_id}/students", response_model=list[StudentRead])
 def list_classroom_students(

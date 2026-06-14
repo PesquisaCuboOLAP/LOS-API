@@ -1,8 +1,14 @@
+from typing import TYPE_CHECKING
+
 from enum import Enum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import Enum as SQLEnum, Integer, String
 
 from app.database import Base
+
+
+if TYPE_CHECKING:
+    from app.models.learning_objective import LearningObjective
 
 
 class Strand(str, Enum):
