@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, Response, status
 from sqlalchemy.orm import Session
 
 from app.database import get_db
+from app.models.classroom import Classroom
 from app.models.student import Student
 from app.schemas.student import StudentCreate, StudentRead, StudentUpdate
 
@@ -11,10 +12,20 @@ router = APIRouter(prefix="/students", tags=["students"])
 
 @router.post("", response_model=StudentRead, status_code=status.HTTP_201_CREATED)
 def create_student(payload: StudentCreate, db: Session = Depends(get_db)):
-    student = Student(name=payload.name)
+    classroom = db.get(Classroom, payload.classroom_id)
+
+    if classroom is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Classroom not found")
+
+    student = Student(
+        name=payload.name.strip(), 
+        classroom_id=classroom.id
+    )
+    
     db.add(student)
     db.commit()
     db.refresh(student)
+
     return student
 
 
@@ -41,9 +52,16 @@ def update_student(
     if student is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Student not found")
 
+    classroom = db.get(Classroom, payload.classroom_id)
+    if classroom is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Classroom not found")
+
     student.name = payload.name
+    student.classroom_id = payload.classroom_id
+
     db.commit()
     db.refresh(student)
+
     return student
 
 
