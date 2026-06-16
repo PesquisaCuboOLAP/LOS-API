@@ -156,7 +156,10 @@ def _parse_learning_objective_import_csv(
 
 def _parse_student_import_csv(file: UploadFile) -> tuple[list[str], int]:
     content = _read_csv_upload(file)
-    reader = csv.DictReader(StringIO(content))
+    reader = csv.DictReader(
+        StringIO(content),
+        delimiter=";"
+    )
 
     if reader.fieldnames is None:
         raise HTTPException(
@@ -165,11 +168,11 @@ def _parse_student_import_csv(file: UploadFile) -> tuple[list[str], int]:
         )
     
     reader.fieldnames = [
-        field.strip() if field else field
+        field.strip().lower() if field else field
         for field in reader.fieldnames
     ]
 
-    normalized_headers = {header.strip() for header in reader.fieldnames if header}
+    normalized_headers = {header.strip().lower() for header in reader.fieldnames if header}
     required_headers = {"name"}
 
     missing_headers = required_headers - normalized_headers
