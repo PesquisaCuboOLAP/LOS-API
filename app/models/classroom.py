@@ -18,3 +18,6 @@ class Classroom(Base):
     students: Mapped[list["Student"]] = relationship(
         back_populates="classroom"
     )
+    learning_objectives: Mapped[list["LearningObjective"]] = relationship(
+        back_populates="classroom"
+    )
