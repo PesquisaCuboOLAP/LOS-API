@@ -19,12 +19,12 @@ router = APIRouter(prefix="/classrooms", tags=["classrooms"])
 
 
 LEARNING_OBJECTIVE_IMPORT_REQUIRED_HEADERS = {
-    "Code",
-    "Learning Strand",
-    "Goal Short Name",
-    "Learning Objective",
-    "Learning Objective Keywords",
-    "Challenge",
+    "code",
+    "learning strand",
+    "goal short name",
+    "learning objective",
+    "learning objective keywords",
+    "challenge",
 }
 
 STRAND_BY_LABEL = {
@@ -95,12 +95,15 @@ def _parse_learning_objective_import_csv(
         )
 
     reader.fieldnames = [
-        field.strip() if field else field
+        field.strip().lower() if field else field
         for field in reader.fieldnames
     ]
 
-    normalized_headers = {header.strip() for header in reader.fieldnames if header}
+    normalized_headers = {header.strip().lower() for header in reader.fieldnames if header}
+    print(normalized_headers)
+    print(LEARNING_OBJECTIVE_IMPORT_REQUIRED_HEADERS)
     missing_headers = LEARNING_OBJECTIVE_IMPORT_REQUIRED_HEADERS - normalized_headers
+    print(missing_headers)
     if missing_headers:
         missing = ", ".join(sorted(missing_headers))
         raise HTTPException(
@@ -136,12 +139,12 @@ def _parse_learning_objective_import_csv(
         rows.append(
             LearningObjectiveImportRow(
                 row_number=row_number,
-                code=normalized_row["Code"],
-                strand=_normalize_strand(normalized_row["Learning Strand"], row_number),
-                goal_short_name=normalized_row["Goal Short Name"],
-                description=normalized_row["Learning Objective"],
-                keywords=normalized_row["Learning Objective Keywords"],
-                challenge_name=normalized_row["Challenge"],
+                code=normalized_row["code"],
+                strand=_normalize_strand(normalized_row["learning strand"], row_number),
+                goal_short_name=normalized_row["goal short name"],
+                description=normalized_row["learning objective"],
+                keywords=normalized_row["learning objective keywords"],
+                challenge_name=normalized_row["challenge"],
             )
         )
 
@@ -156,10 +159,7 @@ def _parse_learning_objective_import_csv(
 
 def _parse_student_import_csv(file: UploadFile) -> tuple[list[str], int]:
     content = _read_csv_upload(file)
-    reader = csv.DictReader(
-        StringIO(content),
-        delimiter=";"
-    )
+    reader = csv.DictReader(StringIO(content))
 
     if reader.fieldnames is None:
         raise HTTPException(
