@@ -1,8 +1,13 @@
+from typing import TYPE_CHECKING
+
 from sqlalchemy import Integer, String, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.database import Base
 
+if TYPE_CHECKING:
+    from app.models.learning_objective import LearningObjective
+    from app.models.student import Student
 
 class Classroom(Base):
     __tablename__ = "classroom"

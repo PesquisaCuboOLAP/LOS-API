@@ -1,9 +1,10 @@
-from fastapi import APIRouter, Depends, HTTPException, Response, status
+from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
 from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models.classroom import Classroom
 from app.models.student import Student
+from app.models.student_record import StudentRecord
 from app.schemas.student import StudentCreate, StudentRead, StudentUpdate
 
 
@@ -32,6 +33,31 @@ def create_student(payload: StudentCreate, db: Session = Depends(get_db)):
 @router.get("", response_model=list[StudentRead])
 def list_students(db: Session = Depends(get_db)):
     return db.query(Student).order_by(Student.id.asc()).all()
+
+
+@router.get("/with-records", response_model=list[StudentRead])
+def list_students_with_records(
+    classroom_id: int = Query(..., description="Classroom ID filter"),
+    db: Session = Depends(get_db),
+) -> list[StudentRead]:
+    """
+    Returns students from a specific classroom that have at least one associated StudentRecord.
+    
+    Args:
+        classroom_id: Required. The ID of the classroom to filter by.
+        db: Database session.
+    
+    Returns:
+        List of students with at least one StudentRecord. Returns empty list if none match.
+    """
+    return (
+        db.query(Student)
+        .join(StudentRecord)
+        .filter(Student.classroom_id == classroom_id)
+        .distinct()
+        .order_by(Student.id.asc())
+        .all()
+    )
 
 
 @router.get("/{student_id}", response_model=StudentRead)
