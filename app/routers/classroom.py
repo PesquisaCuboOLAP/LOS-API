@@ -11,7 +11,7 @@ from app.models.classroom import Classroom
 from app.models.goal_short_name import GoalShortName, Strand
 from app.models.learning_objective import LearningObjective
 from app.models.student import Student
-from app.models.student_record import StudentRecord, RatingLevel
+from app.models.student_record import RatingLevel
 from app.schemas.classroom import ClassroomCreate, ClassroomRead, ClassroomUpdate, ClassroomMetadata, ChallengeMetadata, GoalShortNameMetadata
 from app.schemas.learning_objective import LearningObjectiveImportSummary, LearningObjectiveRead
 from app.schemas.student import StudentImportSummary, StudentRead

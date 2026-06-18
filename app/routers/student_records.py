@@ -241,7 +241,10 @@ def import_student_records(
     )
 
 
-@router.get("/{student_id}/records", response_model=list[StudentRecordRead])
+@router.get(
+    "/{student_id}/records", 
+    response_model=list[StudentRecordRead]
+)
 def get_student_records(student_id: int, db: Session = Depends(get_db)):
     student = db.get(Student, student_id)
     if not student:
@@ -298,7 +301,10 @@ def get_student_records(student_id: int, db: Session = Depends(get_db)):
     return results
 
 
-@router.put("/{student_id}/records", response_model=StudentRecordRead)
+@router.put(
+    "/{student_id}/records", 
+    response_model=StudentRecordRead
+)
 def update_student_record(
     student_id: int,
     payload: StudentRecordUpdateByCode,
@@ -325,7 +331,10 @@ def update_student_record(
     
     # Find learning objective by code
     learning_objective = db.execute(
-        select(LearningObjective).where(LearningObjective.code == payload.learning_objective_code)
+        select(LearningObjective).where(
+            (LearningObjective.code == payload.learning_objective_code) &
+            (LearningObjective.classroom_id == student.classroom_id)
+        )
     ).scalars().first()
     
     if not learning_objective:
@@ -335,13 +344,7 @@ def update_student_record(
         )
     
     # Validate rating is a valid RatingLevel
-    try:
-        rating_level = RatingLevel(payload.rating.value)
-    except (ValueError, AttributeError):
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Invalid rating value: {payload.rating}",
-        )
+    rating_level = payload.rating
     
     # Find or create the StudentRecord
     record = db.execute(

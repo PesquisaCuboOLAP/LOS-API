@@ -94,14 +94,14 @@ You can bulk import student performance records into a classroom with:
 The endpoint expects a CSV upload with these required headers:
 
 ```csv
-learning_objective_code,rating
+Código,Level
 ```
 
 Rules:
 
 - The student must exist.
-- The `learning_objective_code` must reference a valid learning objective.
-- The `rating` must be one of: `NOT_STARTED`, `BEGINNER`, `PROGRESSING`, `PROFICIENT`, `EXEMPLARY`.
+- The `Código` must reference a valid learning objective.
+- The `Level` must be one of: `NOT_STARTED`, `BEGINNER`, `PROGRESSING`, `PROFICIENT`, `EXEMPLARY`.
 - If a record already exists for the student and learning objective, it will be updated (upsert).
 - Each non-empty row creates or updates one `StudentRecord`.
 - The response returns a summary with the number of imported records.
@@ -166,8 +166,8 @@ Example response:
   "rating_levels": ["NOT_STARTED", "BEGINNER", "PROGRESSING", "PROFICIENT", "EXEMPLARY"],
   "strands": ["CODING", "DESIGN", "MARKETING", "PROFESSIONAL_SKILLS"],
   "challenges": [
-    {"id": 1, "name": "Challenge 1", "semester": "FIRST"},
-    {"id": 2, "name": "Challenge 2", "semester": "SECOND"}
+    {"id": 1, "name": "Challenge 1", "semester": "1"},
+    {"id": 2, "name": "Challenge 2", "semester": "2"}
   ],
   "goal_short_names": [
     {"id": 1, "name": "Goal 1", "strand": "CODING"},

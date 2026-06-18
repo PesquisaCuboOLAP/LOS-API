@@ -40,6 +40,3 @@ class LearningObjective(Base):
     student_records: Mapped[list["StudentRecord"]] = relationship(
         back_populates="learning_objective"
     )
-    student_records: Mapped[list["StudentRecord"]] = relationship(
-        back_populates="learning_objective"
-    )

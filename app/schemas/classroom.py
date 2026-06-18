@@ -1,6 +1,5 @@
 from typing import Optional
 from pydantic import BaseModel, ConfigDict, Field
-from app.models.student_record import RatingLevel
 from app.models.goal_short_name import Strand
 from app.models.challenge import Semester
 
