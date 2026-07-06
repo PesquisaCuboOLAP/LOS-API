@@ -5,19 +5,23 @@ from app.models.goal_short_name import Strand
 from app.models.challenge import Semester
 
 class ChallengeInfo(BaseModel):
+    id: int
     name: str
     semester: Optional[Semester] = None
 
     model_config = ConfigDict(from_attributes=True)
 
+class GoalShortNameRead(BaseModel):
+    id: int
+    name: str = Field(..., min_length=1, max_length=255)
+    strand: Strand
 
 class LearningObjectiveExpandedRead(BaseModel):
     id: int
     code: str
     description: str
     keywords: str
-    goal_short_name: str
-    strand: Strand
+    goal_short_name: GoalShortNameRead
     challenge: Optional[ChallengeInfo] = None
 
     model_config = ConfigDict(from_attributes=True)

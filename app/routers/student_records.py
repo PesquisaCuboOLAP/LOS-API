@@ -131,7 +131,7 @@ def parse_rating(code: str, raw_rating: str) -> RatingLevel:
 
     rating = rating_map.get(raw_rating)
 
-    if not rating and raw_rating == "NÃO INICIADO":
+    if not rating and (raw_rating == "NÃO INICIADO" or raw_rating == "NOT STARTED"):
         rating = RatingLevel.NOT_STARTED
 
     if not rating:
@@ -288,12 +288,16 @@ def get_student_records(student_id: int, db: Session = Depends(get_db)):
                 "code": lo.code,
                 "description": lo.description,
                 "keywords": lo.keywords,
-                "goal_short_name": gsn.name,
-                "strand": gsn.strand,
+                "goal_short_name": {
+                    "id": gsn.id,
+                    "name": gsn.name,
+                    "strand": gsn.strand,
+                } if gsn else None,
                 "challenge": {
+                    "id": chal.id,
                     "name": chal.name,
                     "semester": chal.semester
-                } if chal else None
+                } if chal else None,
             }
         }
         results.append(result)

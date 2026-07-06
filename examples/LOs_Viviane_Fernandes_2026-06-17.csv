@@ -1,127 +1,132 @@
-Código,Critério,Keywords,Objetivo,Level,Status,Modificação
-DE-UCD-004,User Centered Design,Usability testing,"I can evaluate usability, recognize flaws and problems, and provide recommendations to improve design",Não Iniciado,—,—
-DE-UCD-005,User Centered Design,"Design thinking, Human-centric design, Ideation","I can apply Design Thinking to ideate, iterate, and refine components or concepts inside of a CBL exploratory cycle.",Não Iniciado,—,—
-DE-UCD-006,User Centered Design,User journey maps,I can create and make best use of User Journey maps. ,Não Iniciado,—,—
-DE-UCD-007,User Centered Design,cognitive load,I can design experiences and interfaces that adopt best practices for reducing cognitive load.,Não Iniciado,—,—
-PS-AWA-003,Self and Social Awareness,diversity,I can negotiate and balance diverse views and beliefs in order to progress,Não Iniciado,—,—
-PS-COL-001,Collaboration,collaborative work,I can demonstrate responsibility for collaborative work,Não Iniciado,—,—
-PS-COL-005,Collaboration,building relationships,I can develop successful teamwork through trust and respect,Não Iniciado,—,—
-PS-COM-001,Communication,active listening,I can perform active listening,Não Iniciado,—,—
-PS-COM-002,Communication,body language,I can demonstrate appropriate verbal tone and body language,Não Iniciado,—,—
-PS-COM-003,Communication,thought articulation,I can effectively articulate thoughts and ideas in a variety of forms,Não Iniciado,—,—
-PS-COM-007,Communication,presentations,I can create clear and appropriate presentations for different audiences and contexts,Não Iniciado,—,—
-PS-INI-001,Initiative,"personal goals, results driven",I can set and manage personal goals.,Não Iniciado,—,—
-PS-LEA-001,Learning,Solutions Identification,I can articulate solutions that are supported by my learning.,Não Iniciado,—,—
-PS-LEA-003,Learning,Documentation,I can document my learning and use it for continuous improvement.,Não Iniciado,—,—
-PS-LEA-004,Learning,Sharing,I share my learning with others for the betterment of the community. ,Não Iniciado,—,—
-CD-ID-012,Interface Development,"Group, Section, ForEach, Form, ControlGroup","I can present views in different kinds of purpose-driven containers, like forms or control groups with SwiftUI.",Progressing,Pendente,18/05/2026
-CD-ID-001,Interface Development,View; View Modifiers;,I can create a hierarchy of configured views using SwiftUI,Progressing,Pendente,18/05/2026
-CD-ID-010,Interface Development,List; Section; listStyle(_:); ,"I can display and stylize a structured, scrollable column of information with SwiftUI",Progressing,Pendente,18/05/2026
-CD-ID-004,Interface Development,"HStack, VStack, ZStack, LazyVStack, LazyHStack, LazyVStack, Grid, LazyVGSpacer, Divider, overlay(alignment:content:)",I can arrange views inside built-in layout containers like stacks and grids with SwiftUI,Progressing,Pendente,18/05/2026
-CD-ID-003,Interface Development,Image; ContentMode; resizing and fitting images;,I can add images to my user interface and manipulate them using SwiftUI,Progressing,Pendente,18/05/2026
-CD-ID-013,Interface Development,"NavigationLink, NavigationStack, NavigationPath, NavigationSplitView, Configuring the sidebar, TabView",I can enable people to move between different parts of my app’s view hierarchy within a scene using SwiftUI,Progressing,Pendente,18/05/2026
-CD-ID-005,Interface Development,Button; Link; Slider; Stepper; Toggle; Picker; DatePicker;,I can display values and get user selections with SwiftUI,Progressing,Pendente,18/05/2026
-CD-DT-003,Developer Tools,Simulator;,I can run my App in the Simulator or on a Device,Proficient,Pendente,18/05/2026
-CD-ID-009,Interface Development,"ScrollView, ScrollViewReader, Animating scroll transitions, Disabling scrolling",I can enable people to scroll to content that doesn’t fit in the current display with SwiftUI.,Progressing,Pendente,18/05/2026
-CD-ID-002,Interface Development,Text; Label; TextField; Font;,I can display formatted text and get text input from the user using SwiftUI,Proficient,Pendente,18/05/2026
-CD-SD-02,Persistence,Relationship;,I can define data relationships with enumerations and model classes using SwiftData,Progressing,Pendente,18/05/2026
-CD-SD-01,Persistence,Model;,I can preserve app’s model data across launches using SwiftData,Beginner,Pendente,18/05/2026
-CD-SD-03,Persistence,VersionedSchema; SchemaMigrationPlan;,I can manage versioned schemas and migrate between specific versions using SwiftData,Beginner,Pendente,18/05/2026
-CD-SD-04,Persistence,Query; Predicate,I can filter and sort persistent data using SwiftData,Progressing,Pendente,18/05/2026
-CD-SD-06,Persistence,UndoManager;,I can  undo and redo SwiftData changes,Beginner,Pendente,18/05/2026
-CD-ID-006,Interface Development,State; Binding; onChange(of:initial:_:); ,"I can work with simple view state, share it between views, and respond to data changes to maintain a consistent and reactive interface.",Progressing,Pendente,18/05/2026
-CD-ID-014,Interface Development,toolbar(content:); ToolbarItem;,I can manage the items displayed on navigation and toolbars using SwiftUI,Progressing,Pendente,18/05/2026
-CD-ID-015,Interface Development,"searchable(text:placement:prompt:), Making search suggestions, Limiting search scope",I can enable search for text or other content within an app using SwiftUI,Progressing,Pendente,18/05/2026
-DE-COM-004,Apple Components,"Activity views, Buttons, Context menus, Dock menus, Edit menus, Menus, Pop-up buttons, Pull-down buttons, Toolbars",I apply best practices when designing appropriate menus and actions in an app.,Não Iniciado,—,—
-DE-COM-003,Apple Components,"Boxes, Collections, Disclosure controls, Labels, Lists and tables, Lockups, Outline views, Split views, Tab views",I apply best practices when designing appropriate layout and organization components in an app.,Não Iniciado,—,—
-PS-COL-002,Collaboration,conflict management,I can facilitate team alignment and conflict management,Não Iniciado,—,—
-PS-COL-003,Collaboration,team goals,"I can set and meet team goals, even in the face of obstacles and competing pressure",Não Iniciado,—,—
-MK-BUS-001,Business,Value Proposition,I can describe the Unique Value Proposition for an app.,Não Iniciado,—,—
-MK-ENT-004,Entrepreneurship,"sustainable, sustainability",I can identify the best solution focused on sustainable social and economic value creation,Não Iniciado,—,—
-DE-BND-001,Consistency and Branding,"Visual research, Style","I can conduct visual research to define the visual style of a project, and can integrate my design choices into the content layer while still supporting Liquid Glass components for a familiar user experience.",Não Iniciado,—,—
-DE-BND-002,Consistency and Branding,"Visual brand, Branding, App icon",I can design a consistent visual branding scheme for my app while deferring to content.,Não Iniciado,—,—
-DE-COM-002,Apple Components,"Image view, Text view, Web view",I apply best practices when designing appropriate content components in an app considering the separation between the UI and content layers supporting Liquid Glass.,Não Iniciado,—,—
-DE-COM-005,Apple Components,"Navigation bars, Path controls, Search fields, Sidebars, Tab bars, Token fields","I apply best practices when designing appropriate navigation and search components in an app, placing UI correctly in a layer supporting Liquid Glass.",Não Iniciado,—,—
-DE-COM-006,Apple Components,"Action sheets, Alerts, Page controls, Panels, Popovers, Scroll views, Sheets",I apply best practices when designing appropriate presentation components in an app.,Não Iniciado,—,—
-DE-COM-007,Apple Components,"Color wells, Combo boxes, Digit entry views, Image wells, Onscreen keyboards, Pickers, Segmented controls, Sliders, Steppers, Text fields, Toggles",I apply best practices when designing appropriate selection and input components in an app.,Não Iniciado,—,—
-DE-INC-001,Inclusion & Accessibility,"Terminology, Familiar, Informal, Welcoming and approachable language","I can write copy for an app that is direct, easy to understand, and inclusive.",Não Iniciado,—,—
-DE-PLA-001,Apple Platforms and Inputs,"iPhone, iOS",I can apply best practices when designing iOS apps.,Não Iniciado,—,—
-DE-PRO-001,Prototyping,UI/User Flow,I can design informative User Flows that follow and/or enhance platform conventions and standards.,Não Iniciado,—,—
-DE-PRO-002,Prototyping,"Lo-fi prototypes, Wireframes",I can design low-fidelity prototypes on both computer and paper. ,Não Iniciado,—,—
-DE-PRO-003,Prototyping,"Hi-fi prototypes, Sketch, interactive prototype",I can design interactive high-fidelity prototypes.,Não Iniciado,—,—
-DE-PRO-004,Prototyping,"Prototype animation, Prototype transitions",I can design advanced transitions and animations for high-fidelity prototypes.,Não Iniciado,—,—
-DE-PRO-005,Prototyping,"Prototype SwiftUI, User testing","I can prototype screens, gestures, and animations using SwiftUI to support accurate user testing.",Não Iniciado,—,—
-DE-PRO-006,Prototyping,App requirements and prototype.,"I can develop appropriate app requirements and a prototype based on my research.
-",Não Iniciado,—,—
-DE-UCD-001,User Centered Design,User Personas,I can create authentic and well researched User Personas,Não Iniciado,—,—
-DE-UCD-003,User Centered Design,"User design, User feedback","I can collect user feedback, evaluate, prioritize and present my findings",Não Iniciado,—,—
-DE-VIS-001,Visual Design Fundamentals,"Color theory, Color spaces, Color palettes, Color wheel",I can apply color theory principles to create well balanced color palettes.,Beginner,Pendente,15/05/2026
-DE-VIS-002,Visual Design Fundamentals,"Color, Contrast",I can use color and contrast effectively throughout an app to create consistent and clear communication.,Não Iniciado,—,—
-DE-VIS-005,Visual Design Fundamentals,"Image formats, File type, Raster, Vector, Resolution, Image size",I can create and export visual assets in appropriate formats.,Não Iniciado,—,—
-DE-VIS-006,Visual Design Fundamentals,SF symbols,I can design apps that use appropriate SF symbols to convey objects and concepts.,Não Iniciado,—,—
-DE-VIS-007,Visual Design Fundamentals,"App icons, Home screen icons",I can design beautiful and memorable home screen icons for my apps.,Não Iniciado,—,—
-DE-VIS-008,Visual Design Fundamentals,"Color meaning, conventions, destructive, primary action color","I understand the standards and conventions for interface colors, such as having a primary action color and using red for destructive actions.",Não Iniciado,—,—
-DE-VIS-009,Visual Design Fundamentals,"Gestalt theory, Visual layouts",I can effectively apply the principles of Gestalt theory to design visual layouts.,Não Iniciado,—,—
-DE-VIS-010,Visual Design Fundamentals,"Typography, Typographical hierarchy, Usability, Prioritizing content, Dynamic type, Accessible type","I can use typography to create hierarchy, emphasize important information, and display text that is easy to read while adjusting to users’ text size.",Não Iniciado,—,—
-DE-VIS-011,Visual Design Fundamentals,"Visual balance, Contrast, White Space, Alignment, Scale, Hierarchy","I can use visual weight, white space, contrast, alignment, value, and scale to create an interface with a clear hierarchy.",Não Iniciado,—,—
-DE-VIS-012,Visual Design Fundamentals,"Custom SF symbols, vector, glyph",I can create custom scalable glyphs using SF Symbols templates and an external vector editor such as Sketch.,Não Iniciado,—,—
-DE-VIS-013,Visual Design Fundamentals,"Glyph icons, System icons",I can design simplified glyph icons and system icons for my apps if I am not using SF Symbols.,Não Iniciado,—,—
-DE-VIS-014,Visual Design Fundamentals,"Visual design materials, Depth",I can imply visual separation between layers with depth and system-defined materials.,Não Iniciado,—,—
-PS-AWA-001,Self and Social Awareness,empathy,"I can demonstrate empathy for others, and act responsibly with the interests of the larger community in mind",Não Iniciado,—,—
-PS-AWA-002,Self and Social Awareness,self evaluation,I can evaluate my strengths and weaknesses,Não Iniciado,—,—
-PS-AWA-004,Self and Social Awareness,open-mind,I can respond to different ideas and values with an open mind,Não Iniciado,—,—
-PS-AWA-005,Self and Social Awareness,"mindfulness, behavior",I can take responsibility for my behavior and well-being,Não Iniciado,—,—
-PS-COM-006,Communication,Team Communication,I can collaborate and communicate effectively with teams,Não Iniciado,—,—
-PS-PRO-001,Productivity,time management,I can evaluate my time in order to accomplish long and short term goals,Não Iniciado,—,—
-PS-RES-001,Research,Research Goals,I can clearly identify the goals and objectives of my research.,Não Iniciado,—,—
-PS-RES-002,Research,Research Methods,I can conduct research by selecting and applying appropriate research methods.,Não Iniciado,—,—
-PS-RES-003,Research,Research Findings,"I can extract, interpret, synthesize, and communicate meaningful research findings.",Não Iniciado,—,—
-CD-CK-01,Persistence,iCloud; CKContainer;,I can enable CloudKit in my App,Progressing,Pendente,18/05/2026
-CD-CK-02,Persistence,CKDatabase; CKRecord;,I can design and create a CloudKit database,Progressing,Pendente,18/05/2026
-CD-CK-03,Persistence,Queryable; Sortable; Searchable;,I can add indexes to record types,Progressing,Pendente,18/05/2026
-CD-CK-04,Persistence,CKRecord;,"I can create, read, update and delete CloudKit records",Progressing,Pendente,18/05/2026
-CD-CK-05,Persistence,CKQuerySubscription;,I can observe changes in remote records using CloudKit subscriptions,Progressing,Pendente,18/05/2026
-CD-CK-06,Persistence,CKRecord.Reference;, I can create many-to-one relationship between records using references,Progressing,Pendente,18/05/2026
-CD-DT-004,Developer Tools,TestFlight; App Distribution;,I can manage App distribution using Xcode,Beginner,Pendente,18/05/2026
-CD-VC-001,Version Control,Source Control,I know how to configure source control in Xcode.,Proficient,Pendente,18/05/2026
-CD-VC-002,Version Control,github; remote repository; local repository,I know how to manage Git repositories on Github,Proficient,Pendente,18/05/2026
-CD-VC-003,Version Control,"init, clone",I know how to create and clone projects with Git,Exemplary,Pendente,18/05/2026
-CD-VC-004,Version Control,"add, status, diff, commit, notes, restore, reset, rm, mv",I know how to use Git's basic snapshotting commands.,Proficient,Pendente,18/05/2026
-CD-VC-005,Version Control,"branch, checkout, switch, merge, mergetool, log, stash, tag, worktree",I know how to manage branches with Git.,Proficient,Pendente,18/05/2026
-CD-VC-006,Version Control,"fetch, pull, push, remote, submodule",I know how to share and update projects with Git,Proficient,Pendente,18/05/2026
-CD-VC-007,Version Control,"show, log, diff, difftool, range-diff, shortlog, describe",I know how to inspect and compare commits with Git,Proficient,Pendente,18/05/2026
-CD-VC-008,Version Control,"apply, cherry-pick, diff, rebase, revert",I know how to patch commits with Git,Proficient,Pendente,18/05/2026
-CD-VC-009,Version Control,gitignore; ignored files,I know how to create and use .gitignore files,Exemplary,Pendente,18/05/2026
-CD-VC-010,Version Control,github; pull request;,I know how to make pull requests and code reviews on github,Exemplary,Pendente,18/05/2026
-CD-VC-011,Version Control,git conflicts,I know how to solve git conflicts,Proficient,Pendente,18/05/2026
-CD-VC-012,Version Control,"git tree conflicts, pbxproj",I know how to solve git tree conflicts,Proficient,Pendente,18/05/2026
-DE-INC-002,Inclusion & Accessibility,"Diversity, Inclusion, Gender identity, Avoiding stereotypes",I can design apps that include and represent human diversity while avoiding stereotypes.,Não Iniciado,—,—
-DE-INC-003,Inclusion & Accessibility,"Left-to-right text, Right-to-left text, Language direction",I can design interfaces that support both left-to-right and right-to-left languages.,Não Iniciado,—,—
-DE-INC-004,Inclusion & Accessibility,"Accessibility, Typography, Accessibility type, Dynamic type, Audit, Closed caption, alternate descriptions","I can design accessible experiences by providing acessible content with close captions, audio description, alternate description and text for al images and infographics.",Não Iniciado,—,—
-DE-INC-005,Inclusion & Accessibility,"VoiceOver, Controls, Reduce transparency, Reduce motion, Bold Text, Increase Contrast",I can design an app that supports Apple’s built-in accessibility settings.,Não Iniciado,—,—
-DE-INC-006,Inclusion & Accessibility,"Contrast ratios, Color schemes, Color blindness",I can design apps with sufficient contrast ratios and color schemes tested for the different types of color blindness.,Não Iniciado,—,—
-DE-PAT-001,Apple Design Patterns,"entering data, Quick Look previews, File management, Drag and drop, Undo and redo, Searching,",I apply best practices for data entry and manipulation in an app.,Não Iniciado,—,—
-DE-PAT-002,Apple Design Patterns,"Status feedback, Haptic feedback, Custom haptics, Launch screen, Animations, audio, tipKit","I apply best practices for providing visual, audio, and haptic feedback to users.",Não Iniciado,—,—
-DE-PAT-003,Apple Design Patterns,Modality,I apply best practices for presenting content using modality in an app.,Não Iniciado,—,—
-DE-PAT-006,Apple Design Patterns,"Private data, Personal data",I apply best practices for requesting and protecting private data.,Não Iniciado,—,—
-DE-VIS-003,Visual Design Fundamentals,"Dark mode support, Contrast ratios",I can design and test colors that adapt to Dark Mode with sufficient contrast ratios even when users enable accessibility features.,Não Iniciado,—,—
-DE-VIS-004,Visual Design Fundamentals,"Screen sizes, Multiple device support",I can design apps that adapt to multiple devices and screen sizes.,Não Iniciado,—,—
-DE-VIS-015,Visual Design Fundamentals,"Motion, Reduce motion","I can design apps that include animation and motion to convey status, provide feedback and instruction, and enrich the visual experience.",Não Iniciado,—,—
-MK-PDM-001,Product Management,user advocacy,I can advocate for user needs based on user research and feedback.,Não Iniciado,—,—
-MK-PDM-006,Product Management,Feedback,I can use TestFlight and the App Store to get feedback on my solution.,Não Iniciado,—,—
-MK-PDM-007,Product Management,Iteration,I use the feedback and data collected from users and stakeholders to determine if the solution effectively solved the challenge and to make improvements.,Não Iniciado,—,—
-MK-REV-001,Legal and App Review Guidelines,"Privacy, user data, data storage, data collection, data sharing, permission, tracking, health, research, data mining, kids, children, COPPA, GDPR, location, location services",I understand all of the legal aspects of user privacy in the App Store Review Guidelines.,Não Iniciado,—,—
-MK-REV-002,Legal and App Review Guidelines,Intellectual property ,"I can apply the different and most suitable types of intellectual Property Rights licenses to my work, and respect the IP rights of other artists, companies, and developers.",Não Iniciado,—,—
-MK-REV-003,Legal and App Review Guidelines,"Sweepstakes, gaming, contests, gambling, lottery, lotteries, VPN, MDM","I understand Apple’s legal requirements and restrictions concerning sweepstakes, contests, gambling, lotteries, virtual private networks (VPN), and mobile device management (MDM).",Não Iniciado,—,—
-MK-REV-004,Legal and App Review Guidelines,Code of conduct,I understand and can follow the Apple Developer Program Code of Conduct.,Não Iniciado,—,—
-MK-REV-005,Legal and App Review Guidelines,"app store guidelines,  App store review",I can describe and effectively follow the App Store Review Guidelines to get an app approved.,Não Iniciado,—,—
-MK-REV-006,Legal and App Review Guidelines,"app store guidelines, identity guidelines, badges, produce images","I can correctly and effectively use App Store badges,  Apple product images, and Apple identity guidelines to effectively promote my app’s availability.",Não Iniciado,—,—
-MK-REV-007,Legal and App Review Guidelines,"app store guidelines,  app rejection",I can explain the common reasons for app rejections.,Não Iniciado,—,—
-PR-PM-003,,Project Objectives,I can create measurable project objectives and deliverables.,Não Iniciado,—,—
-PS-COM-004,Communication,constructive feedback,I can provide constructive feedback,Não Iniciado,—,—
-PS-COM-005,Communication,formal and informal feedback,I can evaluate formal and informal feedback and respond appropriately,Não Iniciado,—,—
-PS-COM-009,Communication,App promotion,"I can effectively use imagery, audio, and video to create stories to promote apps",Não Iniciado,—,—
-PS-INN-001,Innovation,idea creation,I can demonstrate a range of idea creation techniques,Não Iniciado,—,—
-PS-INN-002,Innovation,original ideas,I can demonstrate originality and inventiveness,Não Iniciado,—,—
-PS-LEA-002,Learning,Reflection,I reflect on a regular basis and use the results to become a better learner and developer.,Não Iniciado,—,—
-CD-LP-01,Logic and Programming,Constants and Variables; Comments;,I can use Variables and Constants in Swift,Proficient,Validado,28/05/2026
+Código;Critério;Keywords;Objetivo;Level;Status;Modificação
+DE-UCD-004;User Centered Design;Usability testing;I can evaluate usability, recognize flaws and problems, and provide recommendations to improve design;Not Started;—;—
+DE-UCD-005;User Centered Design;Design thinking, Human-centric design, Ideation;I can apply Design Thinking to ideate, iterate, and refine components or concepts inside of a CBL exploratory cycle.;Not Started;—;—
+DE-UCD-006;User Centered Design;User journey maps;I can create and make best use of User Journey maps. ;Not Started;—;—
+DE-UCD-007;User Centered Design;cognitive load;I can design experiences and interfaces that adopt best practices for reducing cognitive load.;Not Started;—;—
+PS-AWA-003;Self and Social Awareness;diversity;I can negotiate and balance diverse views and beliefs in order to progress;Not Started;—;—
+PS-COL-001;Collaboration;collaborative work;I can demonstrate responsibility for collaborative work;Not Started;—;—
+PS-COL-005;Collaboration;building relationships;I can develop successful teamwork through trust and respect;Not Started;—;—
+PS-COM-001;Communication;active listening;I can perform active listening;Not Started;—;—
+PS-COM-002;Communication;body language;I can demonstrate appropriate verbal tone and body language;Not Started;—;—
+PS-COM-003;Communication;thought articulation;I can effectively articulate thoughts and ideas in a variety of forms;Not Started;—;—
+PS-COM-007;Communication;presentations;I can create clear and appropriate presentations for different audiences and contexts;Not Started;—;—
+PS-INI-001;Initiative;personal goals, results driven;I can set and manage personal goals.;Not Started;—;—
+PS-LEA-001;Learning;Solutions Identification;I can articulate solutions that are supported by my learning.;Not Started;—;—
+PS-LEA-003;Learning;Documentation;I can document my learning and use it for continuous improvement.;Not Started;—;—
+PS-LEA-004;Learning;Sharing;I share my learning with others for the betterment of the community. ;Not Started;—;—
+CD-ID-012;Interface Development;Group, Section, ForEach, Form, ControlGroup;I can present views in different kinds of purpose-driven containers, like forms or control groups with SwiftUI.;Progressing;Pendente;18/05/2026
+CD-ID-001;Interface Development;"View; View Modifiers;";I can create a hierarchy of configured views using SwiftUI;Progressing;Pendente;18/05/2026
+CD-ID-010;Interface Development;"List; Section; listStyle(_:); ";I can display and stylize a structured, scrollable column of information with SwiftUI;Progressing;Pendente;18/05/2026
+CD-ID-004;Interface Development;HStack, VStack, ZStack, LazyVStack, LazyHStack, LazyVStack, Grid, LazyVGSpacer, Divider, overlay(alignment:content:);I can arrange views inside built-in layout containers like stacks and grids with SwiftUI;Progressing;Pendente;18/05/2026
+CD-ID-003;Interface Development;"Image; ContentMode; resizing and fitting images;";I can add images to my user interface and manipulate them using SwiftUI;Progressing;Pendente;18/05/2026
+CD-ID-013;Interface Development;NavigationLink, NavigationStack, NavigationPath, NavigationSplitView, Configuring the sidebar, TabView;I can enable people to move between different parts of my app’s view hierarchy within a scene using SwiftUI;Progressing;Pendente;18/05/2026
+CD-ID-005;Interface Development;"Button; Link; Slider; Stepper; Toggle; Picker; DatePicker;";I can display values and get user selections with SwiftUI;Progressing;Pendente;18/05/2026
+CD-DT-003;Developer Tools;"Simulator;";I can run my App in the Simulator or on a Device;Proficient;Pendente;18/05/2026
+CD-ID-009;Interface Development;ScrollView, ScrollViewReader, Animating scroll transitions, Disabling scrolling;I can enable people to scroll to content that doesn’t fit in the current display with SwiftUI.;Progressing;Pendente;18/05/2026
+CD-ID-002;Interface Development;"Text; Label; TextField; Font;";I can display formatted text and get text input from the user using SwiftUI;Proficient;Pendente;18/05/2026
+CD-SD-02;Persistence;"Relationship;";I can define data relationships with enumerations and model classes using SwiftData;Progressing;Pendente;18/05/2026
+CD-SD-01;Persistence;"Model;";I can preserve app’s model data across launches using SwiftData;Beginner;Pendente;18/05/2026
+CD-SD-03;Persistence;"VersionedSchema; SchemaMigrationPlan;";I can manage versioned schemas and migrate between specific versions using SwiftData;Beginner;Pendente;18/05/2026
+CD-SD-04;Persistence;"Query; Predicate";I can filter and sort persistent data using SwiftData;Progressing;Pendente;18/05/2026
+CD-SD-06;Persistence;"UndoManager;";I can  undo and redo SwiftData changes;Beginner;Pendente;18/05/2026
+CD-ID-006;Interface Development;"State; Binding; onChange(of:initial:_:); ";I can work with simple view state, share it between views, and respond to data changes to maintain a consistent and reactive interface.;Progressing;Pendente;18/05/2026
+CD-ID-014;Interface Development;"toolbar(content:); ToolbarItem;";"I can manage the items displayed on navigation and toolbars using SwiftUI
+";Progressing;Pendente;18/05/2026
+CD-ID-015;Interface Development;searchable(text:placement:prompt:), Making search suggestions, Limiting search scope;"I can enable search for text or other content within an app using SwiftUI
+
+";Progressing;Pendente;18/05/2026
+DE-COM-004;Apple Components;Activity views, Buttons, Context menus, Dock menus, Edit menus, Menus, Pop-up buttons, Pull-down buttons, Toolbars;I apply best practices when designing appropriate menus and actions in an app.;Not Started;—;—
+DE-COM-003;Apple Components;Boxes, Collections, Disclosure controls, Labels, Lists and tables, Lockups, Outline views, Split views, Tab views;I apply best practices when designing appropriate layout and organization components in an app.;Not Started;—;—
+PS-COL-002;Collaboration;conflict management;I can facilitate team alignment and conflict management;Not Started;—;—
+PS-COL-003;Collaboration;team goals;I can set and meet team goals, even in the face of obstacles and competing pressure;Not Started;—;—
+MK-BUS-001;Business;Value Proposition;I can describe the Unique Value Proposition for an app.;Not Started;—;—
+MK-ENT-004;Entrepreneurship;sustainable, sustainability;I can identify the best solution focused on sustainable social and economic value creation;Not Started;—;—
+DE-BND-001;Consistency and Branding;Visual research, Style;I can conduct visual research to define the visual style of a project, and can integrate my design choices into the content layer while still supporting Liquid Glass components for a familiar user experience.;Not Started;—;—
+DE-BND-002;Consistency and Branding;Visual brand, Branding, App icon;I can design a consistent visual branding scheme for my app while deferring to content.;Not Started;—;—
+DE-COM-002;Apple Components;Image view, Text view, Web view;I apply best practices when designing appropriate content components in an app considering the separation between the UI and content layers supporting Liquid Glass.;Not Started;—;—
+DE-COM-005;Apple Components;Navigation bars, Path controls, Search fields, Sidebars, Tab bars, Token fields;"I apply best practices when designing appropriate navigation and search components in an app,
+placing UI correctly in a layer supporting Liquid Glass.";Not Started;—;—
+DE-COM-006;Apple Components;Action sheets, Alerts, Page controls, Panels, Popovers, Scroll views, Sheets;I apply best practices when designing appropriate presentation components in an app.;Not Started;—;—
+DE-COM-007;Apple Components;Color wells, Combo boxes, Digit entry views, Image wells, Onscreen keyboards, Pickers, Segmented controls, Sliders, Steppers, Text fields, Toggles;I apply best practices when designing appropriate selection and input components in an app.;Not Started;—;—
+DE-INC-001;Inclusion & Accessibility;Terminology, Familiar, Informal, Welcoming and approachable language;I can write copy for an app that is direct, easy to understand, and inclusive.;Not Started;—;—
+DE-PLA-001;Apple Platforms and Inputs;iPhone, iOS;I can apply best practices when designing iOS apps.;Not Started;—;—
+DE-PRO-001;Prototyping;UI/User Flow;I can design informative User Flows that follow and/or enhance platform conventions and standards.;Not Started;—;—
+DE-PRO-002;Prototyping;Lo-fi prototypes, Wireframes;I can design low-fidelity prototypes on both computer and paper. ;Not Started;—;—
+DE-PRO-003;Prototyping;Hi-fi prototypes, Sketch, interactive prototype;I can design interactive high-fidelity prototypes.;Not Started;—;—
+DE-PRO-004;Prototyping;Prototype animation, Prototype transitions;I can design advanced transitions and animations for high-fidelity prototypes.;Not Started;—;—
+DE-PRO-005;Prototyping;Prototype SwiftUI, User testing;I can prototype screens, gestures, and animations using SwiftUI to support accurate user testing.;Not Started;—;—
+DE-PRO-006;Prototyping;App requirements and prototype.;"I can develop appropriate app requirements and a prototype based on my research.
+";Not Started;—;—
+DE-UCD-001;User Centered Design;User Personas;I can create authentic and well researched User Personas;Not Started;—;—
+DE-UCD-003;User Centered Design;User design, User feedback;I can collect user feedback, evaluate, prioritize and present my findings;Not Started;—;—
+DE-VIS-001;Visual Design Fundamentals;Color theory, Color spaces, Color palettes, Color wheel;I can apply color theory principles to create well balanced color palettes.;Beginner;Pendente;15/05/2026
+DE-VIS-002;Visual Design Fundamentals;Color, Contrast;I can use color and contrast effectively throughout an app to create consistent and clear communication.;Not Started;—;—
+DE-VIS-005;Visual Design Fundamentals;Image formats, File type, Raster, Vector, Resolution, Image size;I can create and export visual assets in appropriate formats.;Not Started;—;—
+DE-VIS-006;Visual Design Fundamentals;SF symbols;I can design apps that use appropriate SF symbols to convey objects and concepts.;Not Started;—;—
+DE-VIS-007;Visual Design Fundamentals;App icons, Home screen icons;I can design beautiful and memorable home screen icons for my apps.;Not Started;—;—
+DE-VIS-008;Visual Design Fundamentals;Color meaning, conventions, destructive, primary action color;I understand the standards and conventions for interface colors, such as having a primary action color and using red for destructive actions.;Not Started;—;—
+DE-VIS-009;Visual Design Fundamentals;Gestalt theory, Visual layouts;I can effectively apply the principles of Gestalt theory to design visual layouts.;Not Started;—;—
+DE-VIS-010;Visual Design Fundamentals;Typography, Typographical hierarchy, Usability, Prioritizing content, Dynamic type, Accessible type;I can use typography to create hierarchy, emphasize important information, and display text that is easy to read while adjusting to users’ text size.;Not Started;—;—
+DE-VIS-011;Visual Design Fundamentals;Visual balance, Contrast, White Space, Alignment, Scale, Hierarchy;I can use visual weight, white space, contrast, alignment, value, and scale to create an interface with a clear hierarchy.;Not Started;—;—
+DE-VIS-012;Visual Design Fundamentals;Custom SF symbols, vector, glyph;I can create custom scalable glyphs using SF Symbols templates and an external vector editor such as Sketch.;Not Started;—;—
+DE-VIS-013;Visual Design Fundamentals;Glyph icons, System icons;I can design simplified glyph icons and system icons for my apps if I am not using SF Symbols.;Not Started;—;—
+DE-VIS-014;Visual Design Fundamentals;Visual design materials, Depth;I can imply visual separation between layers with depth and system-defined materials.;Not Started;—;—
+PS-AWA-001;Self and Social Awareness;empathy;I can demonstrate empathy for others, and act responsibly with the interests of the larger community in mind;Not Started;—;—
+PS-AWA-002;Self and Social Awareness;self evaluation;I can evaluate my strengths and weaknesses;Not Started;—;—
+PS-AWA-004;Self and Social Awareness;open-mind;I can respond to different ideas and values with an open mind;Not Started;—;—
+PS-AWA-005;Self and Social Awareness;mindfulness, behavior;I can take responsibility for my behavior and well-being;Not Started;—;—
+PS-COM-006;Communication;Team Communication;I can collaborate and communicate effectively with teams;Not Started;—;—
+PS-PRO-001;Productivity;time management;I can evaluate my time in order to accomplish long and short term goals;Not Started;—;—
+PS-RES-001;Research;Research Goals;I can clearly identify the goals and objectives of my research.;Not Started;—;—
+PS-RES-002;Research;Research Methods;I can conduct research by selecting and applying appropriate research methods.;Not Started;—;—
+PS-RES-003;Research;Research Findings;I can extract, interpret, synthesize, and communicate meaningful research findings.;Not Started;—;—
+CD-CK-01;Persistence;"iCloud; CKContainer;";I can enable CloudKit in my App;Progressing;Pendente;18/05/2026
+CD-CK-02;Persistence;"CKDatabase; CKRecord;";I can design and create a CloudKit database;Progressing;Pendente;18/05/2026
+CD-CK-03;Persistence;"Queryable; Sortable; Searchable;";I can add indexes to record types;Progressing;Pendente;18/05/2026
+CD-CK-04;Persistence;"CKRecord;";I can create, read, update and delete CloudKit records;Progressing;Pendente;18/05/2026
+CD-CK-05;Persistence;"CKQuerySubscription;";I can observe changes in remote records using CloudKit subscriptions;Progressing;Pendente;18/05/2026
+CD-CK-06;Persistence;"CKRecord.Reference;"; I can create many-to-one relationship between records using references;Progressing;Pendente;18/05/2026
+CD-DT-004;Developer Tools;"TestFlight; App Distribution;";I can manage App distribution using Xcode;Beginner;Pendente;18/05/2026
+CD-VC-001;Version Control;Source Control;"I know how to configure source control in Xcode.
+";Proficient;Pendente;18/05/2026
+CD-VC-002;Version Control;"github; remote repository; local repository";I know how to manage Git repositories on Github;Proficient;Pendente;18/05/2026
+CD-VC-003;Version Control;init, clone;I know how to create and clone projects with Git;Exemplary;Pendente;18/05/2026
+CD-VC-004;Version Control;add, status, diff, commit, notes, restore, reset, rm, mv;I know how to use Git's basic snapshotting commands.;Proficient;Pendente;18/05/2026
+CD-VC-005;Version Control;branch, checkout, switch, merge, mergetool, log, stash, tag, worktree;I know how to manage branches with Git.;Proficient;Pendente;18/05/2026
+CD-VC-006;Version Control;fetch, pull, push, remote, submodule;I know how to share and update projects with Git;Proficient;Pendente;18/05/2026
+CD-VC-007;Version Control;show, log, diff, difftool, range-diff, shortlog, describe;I know how to inspect and compare commits with Git;Proficient;Pendente;18/05/2026
+CD-VC-008;Version Control;apply, cherry-pick, diff, rebase, revert;I know how to patch commits with Git;Proficient;Pendente;18/05/2026
+CD-VC-009;Version Control;"gitignore; ignored files";I know how to create and use .gitignore files;Exemplary;Pendente;18/05/2026
+CD-VC-010;Version Control;"github; pull request;";I know how to make pull requests and code reviews on github;Exemplary;Pendente;18/05/2026
+CD-VC-011;Version Control;git conflicts;I know how to solve git conflicts;Proficient;Pendente;18/05/2026
+CD-VC-012;Version Control;git tree conflicts, pbxproj;I know how to solve git tree conflicts;Proficient;Pendente;18/05/2026
+DE-INC-002;Inclusion & Accessibility;Diversity, Inclusion, Gender identity, Avoiding stereotypes;I can design apps that include and represent human diversity while avoiding stereotypes.;Not Started;—;—
+DE-INC-003;Inclusion & Accessibility;Left-to-right text, Right-to-left text, Language direction;I can design interfaces that support both left-to-right and right-to-left languages.;Not Started;—;—
+DE-INC-004;Inclusion & Accessibility;Accessibility, Typography, Accessibility type, Dynamic type, Audit, Closed caption, alternate descriptions;I can design accessible experiences by providing acessible content with close captions, audio description, alternate description and text for al images and infographics.;Not Started;—;—
+DE-INC-005;Inclusion & Accessibility;VoiceOver, Controls, Reduce transparency, Reduce motion, Bold Text, Increase Contrast;I can design an app that supports Apple’s built-in accessibility settings.;Not Started;—;—
+DE-INC-006;Inclusion & Accessibility;Contrast ratios, Color schemes, Color blindness;I can design apps with sufficient contrast ratios and color schemes tested for the different types of color blindness.;Not Started;—;—
+DE-PAT-001;Apple Design Patterns;entering data, Quick Look previews, File management, Drag and drop, Undo and redo, Searching,;I apply best practices for data entry and manipulation in an app.;Not Started;—;—
+DE-PAT-002;Apple Design Patterns;Status feedback, Haptic feedback, Custom haptics, Launch screen, Animations, audio, tipKit;I apply best practices for providing visual, audio, and haptic feedback to users.;Not Started;—;—
+DE-PAT-003;Apple Design Patterns;Modality;I apply best practices for presenting content using modality in an app.;Not Started;—;—
+DE-PAT-006;Apple Design Patterns;Private data, Personal data;I apply best practices for requesting and protecting private data.;Not Started;—;—
+DE-VIS-003;Visual Design Fundamentals;Dark mode support, Contrast ratios;I can design and test colors that adapt to Dark Mode with sufficient contrast ratios even when users enable accessibility features.;Not Started;—;—
+DE-VIS-004;Visual Design Fundamentals;Screen sizes, Multiple device support;I can design apps that adapt to multiple devices and screen sizes.;Not Started;—;—
+DE-VIS-015;Visual Design Fundamentals;Motion, Reduce motion;I can design apps that include animation and motion to convey status, provide feedback and instruction, and enrich the visual experience.;Not Started;—;—
+MK-PDM-001;Product Management;user advocacy;I can advocate for user needs based on user research and feedback.;Not Started;—;—
+MK-PDM-006;Product Management;Feedback;I can use TestFlight and the App Store to get feedback on my solution.;Not Started;—;—
+MK-PDM-007;Product Management;Iteration;I use the feedback and data collected from users and stakeholders to determine if the solution effectively solved the challenge and to make improvements.;Not Started;—;—
+MK-REV-001;Legal and App Review Guidelines;Privacy, user data, data storage, data collection, data sharing, permission, tracking, health, research, data mining, kids, children, COPPA, GDPR, location, location services;I understand all of the legal aspects of user privacy in the App Store Review Guidelines.;Not Started;—;—
+MK-REV-002;Legal and App Review Guidelines;Intellectual property ;I can apply the different and most suitable types of intellectual Property Rights licenses to my work, and respect the IP rights of other artists, companies, and developers.;Not Started;—;—
+MK-REV-003;Legal and App Review Guidelines;Sweepstakes, gaming, contests, gambling, lottery, lotteries, VPN, MDM;I understand Apple’s legal requirements and restrictions concerning sweepstakes, contests, gambling, lotteries, virtual private networks (VPN), and mobile device management (MDM).;Not Started;—;—
+MK-REV-004;Legal and App Review Guidelines;Code of conduct;I understand and can follow the Apple Developer Program Code of Conduct.;Not Started;—;—
+MK-REV-005;Legal and App Review Guidelines;app store guidelines,  App store review;I can describe and effectively follow the App Store Review Guidelines to get an app approved.;Not Started;—;—
+MK-REV-006;Legal and App Review Guidelines;app store guidelines, identity guidelines, badges, produce images;I can correctly and effectively use App Store badges,  Apple product images, and Apple identity guidelines to effectively promote my app’s availability.;Not Started;—;—
+MK-REV-007;Legal and App Review Guidelines;app store guidelines,  app rejection;I can explain the common reasons for app rejections.;Not Started;—;—
+PR-PM-003;;Project Objectives;I can create measurable project objectives and deliverables.;Not Started;—;—
+PS-COM-004;Communication;constructive feedback;I can provide constructive feedback;Not Started;—;—
+PS-COM-005;Communication;formal and informal feedback;I can evaluate formal and informal feedback and respond appropriately;Not Started;—;—
+PS-COM-009;Communication;App promotion;I can effectively use imagery, audio, and video to create stories to promote apps;Not Started;—;—
+PS-INN-001;Innovation;idea creation;I can demonstrate a range of idea creation techniques;Not Started;—;—
+PS-INN-002;Innovation;original ideas;I can demonstrate originality and inventiveness;Not Started;—;—
+PS-LEA-002;Learning;Reflection;I reflect on a regular basis and use the results to become a better learner and developer.;Not Started;—;—
+CD-LP-01;Logic and Programming;"Constants and Variables; Comments;";I can use Variables and Constants in Swift;Proficient;Validado;28/05/2026
