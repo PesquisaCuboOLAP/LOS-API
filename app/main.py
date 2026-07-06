@@ -9,6 +9,7 @@ from app.routers.students import router as students_router
 from app.routers.classroom import router as classroom_router
 from app.routers.goal_short_name import router as goal_short_name_router
 from app.routers.learning_objective import router as learning_objective_router
+from app.routers.student_records import router as student_records_router
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
@@ -22,6 +23,7 @@ app.include_router(students_router)
 app.include_router(classroom_router)
 app.include_router(goal_short_name_router)
 app.include_router(learning_objective_router)
+app.include_router(student_records_router)
 
 @app.get("/health")
 def healthcheck():

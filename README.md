@@ -19,6 +19,16 @@ Each student must belong to exactly one classroom.
 
 Each classroom can have zero or many students.
 
+## StudentRecord table (Fact Table)
+
+The `StudentRecord` table tracks student performance against learning objectives with a rating level:
+
+- `id`
+- `student_id` (foreign key to `student.id`)
+- `learning_objective_id` (foreign key to `learning_objective.id`)
+- `rating` (enum: NOT_STARTED, BEGINNER, PROGRESSING, PROFICIENT, EXEMPLARY)
+- Unique constraint on `(student_id, learning_objective_id)` — each student can have only one record per learning objective
+
 ## Import students from CSV
 
 You can bulk import students into a classroom with:
@@ -73,6 +83,99 @@ Rules:
 
 The response returns an import summary with counts for created goal short names, imported learning objectives, skipped duplicates, and created or updated challenges.
 
+## StudentRecord Operations
+
+### Import StudentRecords from CSV
+
+You can bulk import student performance records into a classroom with:
+
+`POST /students/{student_id}/records/import`
+
+The endpoint expects a CSV upload with these required headers:
+
+```csv
+Código,Level
+```
+
+Rules:
+
+- The student must exist.
+- The `Código` must reference a valid learning objective.
+- The `Level` must be one of: `NOT_STARTED`, `BEGINNER`, `PROGRESSING`, `PROFICIENT`, `EXEMPLARY`.
+- If a record already exists for the student and learning objective, it will be updated (upsert).
+- Each non-empty row creates or updates one `StudentRecord`.
+- The response returns a summary with the number of imported records.
+
+### Query students with records
+
+`GET /students/with-records?classroom_id={classroom_id}`
+
+Returns all students in the specified classroom that have at least one StudentRecord. The `classroom_id` query parameter is required. Includes a list of all StudentRecords for each student.
+
+### Update StudentRecord
+
+`PUT /students/{student_id}/records`
+
+Updates a StudentRecord by learning objective code. If no record exists, creates a new one.
+
+Request payload:
+
+```json
+{
+  "learning_objective_code": "LO-CODE-001",
+  "rating": "PROFICIENT"
+}
+```
+
+Returns the updated StudentRecord with nested learning objective details including challenge and semester information.
+
+### Get StudentRecords
+
+`GET /students/{student_id}/records`
+
+Returns all StudentRecords for a student, including nested learning objective and challenge details.
+
+### Delete StudentRecords
+
+`DELETE /students/{student_id}/records`
+
+Bulk deletes all StudentRecords for a student.
+
+## Classroom Metadata
+
+### Get comprehensive classroom metadata
+
+`GET /classrooms/{classroom_id}/metadata`
+
+Returns all reference data and metadata for a classroom in a single response, optimized for frontend initialization. This minimizes the number of requests needed to populate dropdowns and filters.
+
+Response includes:
+
+- `classroom_id` and `classroom_name` — classroom identifiers
+- `rating_levels` — array of all possible StudentRecord rating values: `["NOT_STARTED", "BEGINNER", "PROGRESSING", "PROFICIENT", "EXEMPLARY"]`
+- `strands` — array of all possible goal short name strands
+- `challenges` — array of all challenges with learning objectives in this classroom, including challenge `id`, `name`, and `semester`
+- `goal_short_names` — array of all goal short names associated with learning objectives in this classroom, including `id`, `name`, and `strand`
+
+Example response:
+
+```json
+{
+  "classroom_id": 1,
+  "classroom_name": "2024-2025",
+  "rating_levels": ["NOT_STARTED", "BEGINNER", "PROGRESSING", "PROFICIENT", "EXEMPLARY"],
+  "strands": ["CODING", "DESIGN", "MARKETING", "PROFESSIONAL_SKILLS"],
+  "challenges": [
+    {"id": 1, "name": "Challenge 1", "semester": "1"},
+    {"id": 2, "name": "Challenge 2", "semester": "2"}
+  ],
+  "goal_short_names": [
+    {"id": 1, "name": "Goal 1", "strand": "CODING"},
+    {"id": 2, "name": "Goal 2", "strand": "DESIGN"}
+  ]
+}
+```
+
 ## Run with Docker
 
 ```bash
@@ -89,10 +192,17 @@ The API will be available at `http://localhost:8000`.
 - `GET /students/{student_id}`
 - `PUT /students/{student_id}`
 - `DELETE /students/{student_id}`
+- `GET /students/with-records?classroom_id={classroom_id}` — requires `classroom_id` query parameter
+- `POST /students/{student_id}/records/import` — bulk import StudentRecords from CSV
+- `GET /students/{student_id}/records` — get all StudentRecords for a student
+- `PUT /students/{student_id}/records` — update or create StudentRecord by learning objective code
+- `DELETE /students/{student_id}/records` — delete all StudentRecords for a student
 - `POST /classrooms`  — returns 409 if the same `start_year`+`end_year` already exists
 - `GET /classrooms`
+- `GET /classrooms/{classroom_id}` — get classroom details
 - `PUT /classrooms/{classroom_id}` — returns 409 if another classroom already has the same `start_year`+`end_year`
 - `DELETE /classrooms/{classroom_id}`
+- `GET /classrooms/{classroom_id}/metadata` — returns comprehensive classroom metadata
 - `POST /classrooms/{classroom_id}/students/import`
 - `POST /classrooms/{classroom_id}/learning-objectives/import/{semester}`
 - `POST /goal-short-names` — returns 409 if the name already exists

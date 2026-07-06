@@ -11,7 +11,8 @@ from app.models.classroom import Classroom
 from app.models.goal_short_name import GoalShortName, Strand
 from app.models.learning_objective import LearningObjective
 from app.models.student import Student
-from app.schemas.classroom import ClassroomCreate, ClassroomRead, ClassroomUpdate
+from app.models.student_record import RatingLevel
+from app.schemas.classroom import ClassroomCreate, ClassroomRead, ClassroomUpdate, ClassroomMetadata, ChallengeMetadata, GoalShortNameMetadata
 from app.schemas.learning_objective import LearningObjectiveImportSummary, LearningObjectiveRead
 from app.schemas.student import StudentImportSummary, StudentRead
 
@@ -100,10 +101,7 @@ def _parse_learning_objective_import_csv(
     ]
 
     normalized_headers = {header.strip().lower() for header in reader.fieldnames if header}
-    print(normalized_headers)
-    print(LEARNING_OBJECTIVE_IMPORT_REQUIRED_HEADERS)
     missing_headers = LEARNING_OBJECTIVE_IMPORT_REQUIRED_HEADERS - normalized_headers
-    print(missing_headers)
     if missing_headers:
         missing = ", ".join(sorted(missing_headers))
         raise HTTPException(
@@ -541,6 +539,77 @@ def update_classroom(classroom_id: int, payload: ClassroomUpdate, db: Session = 
     db.refresh(classroom)
 
     return classroom
+
+
+@router.get("/{classroom_id}/metadata", response_model=ClassroomMetadata)
+def get_classroom_metadata(classroom_id: int, db: Session = Depends(get_db)) -> ClassroomMetadata:
+    """
+    Returns comprehensive metadata for a classroom including:
+    - All possible RatingLevel values
+    - All possible Strand values
+    - All challenges associated with the classroom
+    - All goal short names associated with the classroom
+    """
+    classroom = db.get(Classroom, classroom_id)
+    if classroom is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Classroom not found",
+        )
+    
+    # Get all possible RatingLevel values
+    rating_levels = [level.value for level in RatingLevel]
+    
+    # Get all possible Strand values
+    strands = [strand.value for strand in Strand]
+    
+    # Get all challenges (not filtered by classroom, as per requirement for "associated")
+    # Challenges are global, but can be filtered by learning objectives in classroom
+    all_challenges = db.query(Challenge).all()
+    
+    # Filter challenges to only those with learning objectives in this classroom
+    classroom_los = db.query(LearningObjective).filter(
+        LearningObjective.classroom_id == classroom_id
+    ).all()
+    classroom_lo_ids = {lo.id for lo in classroom_los}
+    
+    filtered_challenges = []
+    for chal in all_challenges:
+        # Check if any of the challenge's LOs are in this classroom
+        if any(lo_id in classroom_lo_ids for lo_id in chal.learning_objective_ids):
+            filtered_challenges.append(
+                ChallengeMetadata(
+                    id=chal.id,
+                    name=chal.name,
+                    semester=chal.semester
+                )
+            )
+    
+    # Get goal short names associated with classroom (via learning objectives)
+    goal_short_names_db = db.query(GoalShortName).join(
+        LearningObjective,
+        LearningObjective.goal_short_name_id == GoalShortName.id
+    ).filter(
+        LearningObjective.classroom_id == classroom_id
+    ).distinct().all()
+    
+    goal_short_names = [
+        GoalShortNameMetadata(
+            id=gsn.id,
+            name=gsn.name,
+            strand=gsn.strand
+        )
+        for gsn in goal_short_names_db
+    ]
+    
+    return ClassroomMetadata(
+        classroom_id=classroom.id,
+        classroom_name=classroom.name,
+        rating_levels=rating_levels,
+        strands=strands,
+        challenges=filtered_challenges,
+        goal_short_names=goal_short_names,
+    )
 
 
 @router.delete("/{classroom_id}", status_code=status.HTTP_204_NO_CONTENT)

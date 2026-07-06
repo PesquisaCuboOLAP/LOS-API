@@ -9,6 +9,7 @@ from app.database import Base
 if TYPE_CHECKING:
     from app.models.classroom import Classroom
     from app.models.goal_short_name import GoalShortName
+    from app.models.student_record import StudentRecord
 
 
 class LearningObjective(Base):
@@ -34,4 +35,8 @@ class LearningObjective(Base):
     )
     goal_short_name: Mapped["GoalShortName"] = relationship(
         back_populates="learning_objectives"
+    )
+    
+    student_records: Mapped[list["StudentRecord"]] = relationship(
+        back_populates="learning_objective"
     )

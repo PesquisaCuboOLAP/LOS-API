@@ -1,0 +1,198 @@
+Code,Learning Strand,Goal Short Name,Learning Objective,Learning Objective Keywords,Challenge
+MK-BUS-001,Marketing,Business,I can describe the Unique Value Proposition for an app.,Value Proposition,Feeling the wind Design
+MK-ENT-004,Marketing,Entrepreneurship,I can identify the best solution focused on sustainable social and economic value creation,sustainable; sustainability,Feeling the wind Design
+MK-ENT-005,Marketing,Entrepreneurship,"I can identify key elements for pitch deck and pitch a business idea/project, to attract stakeholder support.",Pitch; Pitch Deck; funding,Flying High App Store
+MK-APP-010,Marketing,App Store,I can use app updates to engage with users as an opportunity to engage with users.,app updates,Flying High App Store
+MK-APP-004,Marketing,App Store,I can describe and leverage the discovery features of the app store to effectively market apps.,discovery features,Flying High App Store
+MK-APP-005,Marketing,App Store,I can write an effective Product Page that help users discover my app through thoughtfully crafted text and metadata.,App Store Product Page; metadata,Flying High App Store
+MK-APP-009,Marketing,App Store,"I can prepare an app for a global audience, and help users around the world discover and download my app",Localization; global audience,Flying High App Store
+MK-APP-007,Marketing,App Store,I can describe when it is appropriate to offer app bundles and understand how to do it.,App bundles,Flying High App Store
+MK-APP-001,Marketing,App Store,I understand how to implement App Store Product Page Optimization to help users find the App,App Store Search Optimization; SEO,Flying High App Store
+MK-APP-003,Marketing,App Store,I can explore and compare categories to choose which best describes my app.,categories,Flying High App Store
+MK-APP-008,Marketing,App Store,I understand how to efficiently help people discover an app with Apple Search Ads,Apple Search ads,Flying High App Store
+MK-APP-006,Marketing,App Store,"I can plan, present, and promote live events in games to help grow business.",live events,Flying High App Store
+MK-APP-011,Marketing,App Store,"I can effectively communicate with the press and media through stories, social media posts, product presentations, and promotional materials for my app.",promotional materials; press; media; storytelling; presentation; social media,Flying High App Store
+MK-APP-002,Marketing,App Store,I understand how to publish an app as a pre-order.,app store pre-order,Flying High App Store
+MK-REV-005,Marketing,Legal and App Review Guidelines,I can describe and effectively follow the App Store Review Guidelines to get an app approved.,app store guidelines; App store review,First Flight TestFlight
+MK-REV-006,Marketing,Legal and App Review Guidelines,"I can correctly and effectively use App Store badges, Apple product images, and Apple identity guidelines to effectively promote my app’s availability.",app store guidelines; identity guidelines; badges; produce images,First Flight TestFlight
+MK-REV-002,Marketing,Legal and App Review Guidelines,"I can apply the different and most suitable types of intellectual Property Rights licenses to my work, and respect the IP rights of other artists, companies, and developers.",Intellectual property,First Flight TestFlight
+MK-REV-007,Marketing,Legal and App Review Guidelines,I can explain the common reasons for app rejections.,app store guidelines; app rejection,First Flight TestFlight
+MK-REV-001,Marketing,Legal and App Review Guidelines,I understand all of the legal aspects of user privacy in the App Store Review Guidelines.,Privacy; user data; data storage; data collection; data sharing; permission; tracking; health; research; data mining; kids; children; COPPA; GDPR; location; location services,First Flight TestFlight
+MK-REV-003,Marketing,Legal and App Review Guidelines,"I understand Apple’s legal requirements and restrictions concerning sweepstakes, contests, gambling, lotteries, virtual private networks (VPN), and mobile device management (MDM).",Sweepstakes; gaming; contests; gambling; lottery; lotteries; VPN; MDM,First Flight TestFlight
+MK-REV-004,Marketing,Legal and App Review Guidelines,I understand and can follow the Apple Developer Program Code of Conduct.,Code of conduct,First Flight TestFlight
+MK-PDM-005,Marketing,Product Management,I can create a vision for a product based on user and market research.,market research; user research; product vision,Feeling the wind Design
+MK-PDM-006,Marketing,Product Management,I can use TestFlight and the App Store to get feedback on my solution.,Feedback,First Flight TestFlight
+MK-PDM-001,Marketing,Product Management,I can advocate for user needs based on user research and feedback.,user advocacy,First Flight TestFlight
+MK-PDM-007,Marketing,Product Management,I use the feedback and data collected from users and stakeholders to determine if the solution effectively solved the challenge and to make improvements.,Iteration,First Flight TestFlight
+CD-DT-003,Coding,Developer Tools,I can run my App in the Simulator or on a Device,Simulator;,Spreading Wings Swift UI
+CD-DT-004,Coding,Developer Tools,I can manage App distribution using Xcode,TestFlight; App Distribution;,First Flight TestFlight
+CD-ID-012,Coding,Interface Development,"I can present views in different kinds of purpose-driven containers, like forms or control groups with SwiftUI.",Group; Section; ForEach; Form; ControlGroup,Spreading Wings Swift UI
+CD-ID-001,Coding,Interface Development,I can create a hierarchy of configured views using SwiftUI,View; View Modifiers;,Spreading Wings Swift UI
+CD-ID-010,Coding,Interface Development,"I can display and stylize a structured, scrollable column of information with SwiftUI",List; Section; listStyle(_:);,Spreading Wings Swift UI
+CD-ID-004,Coding,Interface Development,I can arrange views inside built-in layout containers like stacks and grids with SwiftUI,HStack; VStack; ZStack; LazyVStack; LazyHStack; LazyVStack; Grid; LazyVGSpacer; Divider; overlay(alignment:content:),Spreading Wings Swift UI
+CD-ID-003,Coding,Interface Development,I can add images to my user interface and manipulate them using SwiftUI,Image; ContentMode; resizing and fitting images;,Spreading Wings Swift UI
+CD-ID-013,Coding,Interface Development,I can enable people to move between different parts of my app’s view hierarchy within a scene using SwiftUI,NavigationLink; NavigationStack; NavigationPath; NavigationSplitView; Configuring the sidebar; TabView,Spreading Wings Swift UI
+CD-ID-005,Coding,Interface Development,I can display values and get user selections with SwiftUI,Button; Link; Slider; Stepper; Toggle; Picker; DatePicker;,Spreading Wings Swift UI
+CD-ID-009,Coding,Interface Development,I can enable people to scroll to content that doesn’t fit in the current display with SwiftUI.,ScrollView; ScrollViewReader; Animating scroll transitions; Disabling scrolling,Spreading Wings Swift UI
+CD-ID-002,Coding,Interface Development,I can display formatted text and get text input from the user using SwiftUI,Text; Label; TextField; Font;,Spreading Wings Swift UI
+CD-ID-006,Coding,Interface Development,"I can work with simple view state, share it between views, and respond to data changes to maintain a consistent and reactive interface.",State; Binding; onChange(of:initial:_:);,Spreading Wings Swift UI
+"CD-ID-014
+",Coding,Interface Development,I can manage the items displayed on navigation and toolbars using SwiftUI,toolbar(content:); ToolbarItem;,Spreading Wings Swift UI
+CD-ID-015,Coding,Interface Development,I can enable search for text or other content within an app using SwiftUI,searchable(text:placement:prompt:); Making search suggestions; Limiting search scope,Spreading Wings Swift UI
+CD-LP-19,Coding,Logic and Programming,I can use Extensions in Swift,Extension; Computed Properties; Methods;,Spreading Wings Swift UI
+CD-LP-06,Coding,Logic and Programming,I can use Optional Values in Swift,nil; Forced Unwrapping; Optional Binding;,Spreading Wings Swift UI
+CD-LP-01,Coding,Logic and Programming,I can use Variables and Constants in Swift,Constants and Variables; Comments;,Spreading Wings Swift UI
+CD-LP-25,Coding,Logic and Programming,I can make responsive apps that update the presentation when underlying data changes.,Observable;,Spreading Wings Swift UI
+CD-LP-07,Coding,Logic and Programming,I can use Collection Types in Swift,Arrays; Dictionaries;,Spreading Wings Swift UI
+CD-LP-12,Coding,Logic and Programming,I can implement Methods in Swift,Instance Methods;,Spreading Wings Swift UI
+CD-LP-22,Coding,Logic and Programming,I can work with Protocols in Swift,Protocol; Delegation;,Spreading Wings Swift UI
+CD-LP-16,Coding,Logic and Programming,I can work with Closures in Swift,Closure Expressions; Trailing Closures; Escaping Closures; Autoclosures;,Spreading Wings Swift UI
+CD-LP-03,Coding,Logic and Programming,I can use Strings and Characters in Swift,String Literals; Empty String; String Interpolation;,Spreading Wings Swift UI
+CD-LP-17,Coding,Logic and Programming,I can perform asynchronous operations,Asynchronous Functions; Asynchronous Sequences; Tasks and Task Groups; Actors;,Spreading Wings Swift UI
+CD-LP-21,Coding,Logic and Programming,I can implement Opaque types in Swift,Opaque Type;,Spreading Wings Swift UI
+CD-LP-13,Coding,Logic and Programming,I can implement Properties in Swift,Stored Properties;,Spreading Wings Swift UI
+CD-LP-20,Coding,Logic and Programming,I can work with Generics in Swift,Generic Functions; Generic Types; Associated Types;,Spreading Wings Swift UI
+CD-LP-24,Coding,Logic and Programming,I can use Type Casting in Swift,Checking Type; Downcasting;,Spreading Wings Swift UI
+CD-LP-08,Coding,Logic and Programming,I can use Basic Operators in Swift,Basic operators; Assignment Operator; Arithmetic Operators; Range Operators;,Spreading Wings Swift UI
+CD-LP-09,Coding,Logic and Programming,I can use Functions in Swift,func; Parameters and return value;,Spreading Wings Swift UI
+CD-LP-05,Coding,Logic and Programming,I can use Conditional Statements in Swift,if/else; switch/case; guard; Comparison Operators;,Spreading Wings Swift UI
+CD-LP-14,Coding,Logic and Programming,I can use Inheritance in Swift,Base Class; Subclassing;,Spreading Wings Swift UI
+CD-LP-23,Coding,Logic and Programming,I can use subscripts in Swift,subscript;,Spreading Wings Swift UI
+CD-LP-18,Coding,Logic and Programming,I can handle Errors in Swift,Error; throw; do/catch; try;,Spreading Wings Swift UI
+CD-LP-11,Coding,Logic and Programming,I can use Enumeration in Swift,enum;,Spreading Wings Swift UI
+CD-LP-04,Coding,Logic and Programming,I can use Control Flow in Swift,for-In; while;,Spreading Wings Swift UI
+CD-LP-10,Coding,Logic and Programming,I can implement Structures and Classes in Swift,struct; class;,Spreading Wings Swift UI
+CD-LP-15,Coding,Logic and Programming,I can work with Access Control in Swift,public; internal; private; fileprivate;,Spreading Wings Swift UI
+CD-LP-02,Coding,Logic and Programming,I can use Numbers and Boolean values in Swift,Int; Double; Numeric Literals; Numeric Type Conversion; Bool;,Spreading Wings Swift UI
+CD-LP-26,Coding,Logic and Programming,i can use Automatic Reference Counting in Swift,How ARC Works; ARC in Action; Strong Reference Cycles Between Class Instances; Resolving Strong Reference Cycles Between Class Instances; Strong Reference Cycles for Closures; Resolving Strong Reference Cycles for Closures,Spreading Wings Swift UI
+CD-LP-27,Coding,Logic and Programming,I can use Memory Safety in Swift,Understanding Conflicting Access to Memory; Conflicting Access to In-Out Parameters; Conflicting Access to self in Methods; Conflicting Access to Properties,Spreading Wings Swift UI
+CD-SD-02,Coding,Persistence,I can define data relationships with enumerations and model classes using SwiftData,Relationship;,Spreading Wings Swift UI
+CD-SD-01,Coding,Persistence,I can preserve app’s model data across launches using SwiftData,Model;,Spreading Wings Swift UI
+CD-SD-03,Coding,Persistence,I can manage versioned schemas and migrate between specific versions using SwiftData,VersionedSchema; SchemaMigrationPlan;,Spreading Wings Swift UI
+CD-SD-04,Coding,Persistence,I can filter and sort persistent data using SwiftData,Query; Predicate,Spreading Wings Swift UI
+CD-SD-06,Coding,Persistence,I can  undo and redo SwiftData changes,UndoManager;,Spreading Wings Swift UI
+CD-CK-02,Coding,Persistence,I can design and create a CloudKit database,CKDatabase; CKRecord;,First Flight TestFlight
+CD-CK-05,Coding,Persistence,I can observe changes in remote records using CloudKit subscriptions,CKQuerySubscription;,First Flight TestFlight
+CD-CK-04,Coding,Persistence,"I can create, read, update and delete CloudKit records",CKRecord;,First Flight TestFlight
+CD-CK-01,Coding,Persistence,I can enable CloudKit in my App,iCloud; CKContainer;,First Flight TestFlight
+CD-CK-06,Coding,Persistence,I can create many-to-one relationship between records using references,CKRecord.Reference;,First Flight TestFlight
+CD-CK-03,Coding,Persistence,I can add indexes to record types,Queryable; Sortable; Searchable;,First Flight TestFlight
+CD-VC-003,Coding,Version Control,I know how to create and clone projects with Git,init; clone,First Flight TestFlight
+CD-VC-001,Coding,Version Control,I know how to configure source control in Xcode.,Source Control,First Flight TestFlight
+CD-VC-004,Coding,Version Control,I know how to use Git's basic snapshotting commands.,add; status; diff; commit; notes; restore; reset; rm; mv,First Flight TestFlight
+CD-VC-005,Coding,Version Control,I know how to manage branches with Git.,branch; checkout; switch; merge; mergetool; log; stash; tag; worktree,First Flight TestFlight
+CD-VC-006,Coding,Version Control,I know how to share and update projects with Git,fetch; pull; push; remote; submodule,First Flight TestFlight
+CD-VC-007,Coding,Version Control,I know how to inspect and compare commits with Git,show; log; diff; difftool; range-diff; shortlog; describe,First Flight TestFlight
+CD-VC-008,Coding,Version Control,I know how to patch commits with Git,apply; cherry-pick; diff; rebase; revert,First Flight TestFlight
+CD-VC-009,Coding,Version Control,I know how to create and use .gitignore files,gitignore; ignored files,First Flight TestFlight
+CD-VC-002,Coding,Version Control,I know how to manage Git repositories on Github,github; remote repository; local repository,First Flight TestFlight
+CD-VC-010,Coding,Version Control,I know how to make pull requests and code reviews on github,github; pull request;,First Flight TestFlight
+CD-VC-011,Coding,Version Control,I know how to solve git conflicts,git conflicts,First Flight TestFlight
+CD-VC-012,Coding,Version Control,I know how to solve git tree conflicts,git tree conflicts; pbxproj,First Flight TestFlight
+DE-BND-002,Design,Consistency and Branding,I can design a consistent visual branding scheme for my app while deferring to content.,Visual brand; Branding; App icon,Feeling the wind Design
+DE-BND-001,Design,Consistency and Branding,"I can conduct visual research to define the visual style of a project, and can integrate my design choices into the content layer while still supporting Liquid Glass components for a familiar user experience.",Visual research; Style,Feeling the wind Design
+DE-BND-004,Design,Consistency and Branding,I can develop a UI Style Guide.,UI Style Guide; Typography scheme; Color palette,First Flight TestFlight
+DE-BND-005,Design,Consistency and Branding,I can create branding guidelines for marketing materials to support my app.,Marketing materials; Branding; Guidelines,Flying High App Store
+DE-COM-004,Design,Apple Components,I apply best practices when designing appropriate menus and actions in an app.,Activity views; Buttons; Context menus; Dock menus; Edit menus; Menus; Pop-up buttons; Pull-down buttons; Toolbars,Spreading Wings Swift UI
+DE-COM-005,Design,Apple Components,"I apply best practices when designing appropriate navigation and search components in an app, placing UI correctly in a layer supporting Liquid Glass.",Navigation bars; Path controls; Search fields; Sidebars; Tab bars; Token fields,Feeling the wind Design
+DE-COM-006,Design,Apple Components,I apply best practices when designing appropriate presentation components in an app.,Action sheets; Alerts; Page controls; Panels; Popovers; Scroll views; Sheets,Feeling the wind Design
+DE-COM-007,Design,Apple Components,I apply best practices when designing appropriate selection and input components in an app.,Color wells; Combo boxes; Digit entry views; Image wells; Onscreen keyboards; Pickers; Segmented controls; Sliders; Steppers; Text fields; Toggles,Feeling the wind Design
+DE-COM-002,Design,Apple Components,I apply best practices when designing appropriate content components in an app considering the separation between the UI and content layers supporting Liquid Glass.,Image view; Text view; Web view,Feeling the wind Design
+DE-COM-003,Design,Apple Components,I apply best practices when designing appropriate layout and organization components in an app.,Boxes; Collections; Disclosure controls; Labels; Lists and tables; Lockups; Outline views; Split views; Tab views,Spreading Wings Swift UI
+DE-INC-001,Design,Inclusion & Accessibility,"I can write copy for an app that is direct, easy to understand, and inclusive.",Terminology; Familiar; Informal; Welcoming and approachable language,Feeling the wind Design
+DE-INC-006,Design,Inclusion & Accessibility,I can design apps with sufficient contrast ratios and color schemes tested for the different types of color blindness.,Contrast ratios; Color schemes; Color blindness,First Flight TestFlight
+DE-INC-003,Design,Inclusion & Accessibility,I can design interfaces that support both left-to-right and right-to-left languages.,Left-to-right text; Right-to-left text; Language direction,First Flight TestFlight
+DE-INC-004,Design,Inclusion & Accessibility,"I can design accessible experiences by providing acessible content with close captions, audio description, alternate description and text for al images and infographics.",Accessibility; Typography; Accessibility type; Dynamic type; Audit; Closed caption; alternate descriptions,First Flight TestFlight
+DE-INC-005,Design,Inclusion & Accessibility,I can design an app that supports Apple’s built-in accessibility settings.,VoiceOver; Controls; Reduce transparency; Reduce motion; Bold Text; Increase Contrast,First Flight TestFlight
+DE-INC-002,Design,Inclusion & Accessibility,I can design apps that include and represent human diversity while avoiding stereotypes.,Diversity; Inclusion; Gender identity; Avoiding stereotypes,First Flight TestFlight
+DE-PAT-003,Design,Apple Design Patterns,I apply best practices for presenting content using modality in an app.,Modality,First Flight TestFlight
+DE-PAT-004,Design,Apple Design Patterns,"I apply best practices for onboarding experiences, providing tips through TipKit, and unobtrusive feedback requests.",Onboarding; Offering help; Ratings and reviews,Flying High App Store
+DE-PAT-005,Design,Apple Design Patterns,I apply best practices for designing notifications that integrate with Focus in an app.,notifications; Focus,Flying High App Store
+DE-PAT-002,Design,Apple Design Patterns,"I apply best practices for providing visual, audio, and haptic feedback to users.",Status feedback; Haptic feedback; Custom haptics; Launch screen; Animations; audio; tipKit,First Flight TestFlight
+DE-PAT-001,Design,Apple Design Patterns,I apply best practices for data entry and manipulation in an app.,entering data; Quick Look previews; File management; Drag and drop; Undo and redo; Searching;,First Flight TestFlight
+DE-PAT-006,Design,Apple Design Patterns,I apply best practices for requesting and protecting private data.,Private data; Personal data,First Flight TestFlight
+DE-PAT-010,Design,Apple Design Patterns,I support best practices for supporting personalization through Settings in an app.,Settings; personalization,Flying High App Store
+DE-PLA-005,Design,Apple Platforms and Inputs,I can apply best practices when designing tvOS apps.,Apple TV; tvOS; Remotes; Game controllers; Focus and selection; Keyboards,Flying High App Store
+DE-PLA-002,Design,Apple Platforms and Inputs,I can apply best practices when utilizing advanced inputs for iOS apps.,Game controllers; Gyro and accelerometer; Keyboards; Touchscreen gestures,Flying High App Store
+DE-PLA-006,Design,Apple Platforms and Inputs,I can apply best practices when designing watchOS apps.,Apple Watch; watchOS; Digital Crown; Always On; Gyro and accelerometer; Touchscreen gestures,Flying High App Store
+DE-PLA-003,Design,Apple Platforms and Inputs,I can apply best practices when designing iPadOS apps.,iPad; iPadOS; Game controllers; Gyro and accelerometer; Pointing devices; Focus and selection; Apple Pencil and Scribble; Keyboards; Touchscreen gestures,Flying High App Store
+DE-PLA-004,Design,Apple Platforms and Inputs,I can apply best practices when designing macOS apps.,Mac; macOS; Touch Bar; Game controllers; Pointing devices; Focus and selection; Keyboards,Flying High App Store
+DE-PLA-001,Design,Apple Platforms and Inputs,I can apply best practices when designing iOS apps.,iPhone; iOS,Feeling the wind Design
+DE-PRO-002,Design,Prototyping,I can design low-fidelity prototypes on both computer and paper. ,Lo-fi prototypes; Wireframes,Feeling the wind Design
+DE-PRO-003,Design,Prototyping,I can design interactive high-fidelity prototypes.,Hi-fi prototypes; Sketch; interactive prototype,Feeling the wind Design
+DE-PRO-004,Design,Prototyping,I can design advanced transitions and animations for high-fidelity prototypes.,Prototype animation; Prototype transitions,Feeling the wind Design
+DE-PRO-001,Design,Prototyping,I can design informative User Flows that follow and/or enhance platform conventions and standards.,UI/User Flow,Feeling the wind Design
+DE-PRO-005,Design,Prototyping,"I can prototype screens, gestures, and animations using SwiftUI to support accurate user testing.",Prototype SwiftUI; User testing,Feeling the wind Design
+DE-PRO-006,Design,Prototyping,I can develop appropriate app requirements and a prototype based on my research.,App requirements and prototype.,Feeling the wind Design
+DE-TEC-010,Design,Apple Technologies,I can design apps that use Sign In with Apple for authentication.,Sign In with Apple button; Authentication; Sign In with Apple,Flying High App Store
+DE-UCD-003,Design,User Centered Design,"I can collect user feedback, evaluate, prioritize and present my findings",User design; User feedback,Feeling the wind Design
+DE-UCD-002,Design,User Centered Design,I can conduct user testing sessions in person and remotely,User testing,Flying High App Store
+DE-UCD-001,Design,User Centered Design,I can create authentic and well researched User Personas,User Personas,Feeling the wind Design
+DE-UCD-006,Design,User Centered Design,I can create and make best use of User Journey maps. ,User journey maps,First Steps CBL
+DE-UCD-004,Design,User Centered Design,"I can evaluate usability, recognize flaws and problems, and provide recommendations to improve design",Usability testing,First Steps CBL
+DE-UCD-005,Design,User Centered Design,"I can apply Design Thinking to ideate, iterate, and refine components or concepts inside of a CBL exploratory cycle.",Design thinking; Human-centric design; Ideation,First Steps CBL
+DE-UCD-007,Design,User Centered Design,I can design experiences and interfaces that adopt best practices for reducing cognitive load.,cognitive load,First Steps CBL
+DE-VIS-002,Design,Visual Design Fundamentals,I can use color and contrast effectively throughout an app to create consistent and clear communication.,Color; Contrast,Feeling the wind Design
+DE-VIS-005,Design,Visual Design Fundamentals,I can create and export visual assets in appropriate formats.,Image formats; File type; Raster; Vector; Resolution; Image size,Feeling the wind Design
+DE-VIS-010,Design,Visual Design Fundamentals,"I can use typography to create hierarchy, emphasize important information, and display text that is easy to read while adjusting to users’ text size.",Typography; Typographical hierarchy; Usability; Prioritizing content; Dynamic type; Accessible type,Feeling the wind Design
+DE-VIS-001,Design,Visual Design Fundamentals,I can apply color theory principles to create well balanced color palettes.,Color theory; Color spaces; Color palettes; Color wheel,Feeling the wind Design
+DE-VIS-014,Design,Visual Design Fundamentals,I can imply visual separation between layers with depth and system-defined materials.,Visual design materials; Depth,Feeling the wind Design
+DE-VIS-011,Design,Visual Design Fundamentals,"I can use visual weight, white space, contrast, alignment, value, and scale to create an interface with a clear hierarchy.",Visual balance; Contrast; White Space; Alignment; Scale; Hierarchy,Feeling the wind Design
+DE-VIS-008,Design,Visual Design Fundamentals,"I understand the standards and conventions for interface colors, such as having a primary action color and using red for destructive actions.",Color meaning; conventions; destructive; primary action color,Feeling the wind Design
+DE-VIS-009,Design,Visual Design Fundamentals,I can effectively apply the principles of Gestalt theory to design visual layouts.,Gestalt theory; Visual layouts,Feeling the wind Design
+DE-VIS-012,Design,Visual Design Fundamentals,I can create custom scalable glyphs using SF Symbols templates and an external vector editor such as Sketch.,Custom SF symbols; vector; glyph,Feeling the wind Design
+DE-VIS-006,Design,Visual Design Fundamentals,I can design apps that use appropriate SF symbols to convey objects and concepts.,SF symbols,Feeling the wind Design
+DE-VIS-004,Design,Visual Design Fundamentals,I can design apps that adapt to multiple devices and screen sizes.,Screen sizes; Multiple device support,First Flight TestFlight
+DE-VIS-015,Design,Visual Design Fundamentals,"I can design apps that include animation and motion to convey status, provide feedback and instruction, and enrich the visual experience.",Motion; Reduce motion,First Flight TestFlight
+DE-VIS-013,Design,Visual Design Fundamentals,I can design simplified glyph icons and system icons for my apps if I am not using SF Symbols.,Glyph icons; System icons,Feeling the wind Design
+DE-VIS-007,Design,Visual Design Fundamentals,I can design beautiful and memorable home screen icons for my apps.,App icons; Home screen icons,Feeling the wind Design
+DE-VIS-003,Design,Visual Design Fundamentals,I can design and test colors that adapt to Dark Mode with sufficient contrast ratios even when users enable accessibility features.,Dark mode support; Contrast ratios,First Flight TestFlight
+PR-AG-001,Process,Agile,"I can explain and apply the Agile philosophy, including values and principles.",Agile philosophy,Flying High App Store
+PR-AG-002,Process,Agile,I can explain and apply the various Agile methodologies and explain why and when they are appropriate.,Agile methodologies,Flying High App Store
+PR-KA-004,Process,Kanban,I understand what a workflow is and how the Kanban style workflow helps to manage tasks more effectively.,Kanban workflow,Flying High App Store
+PR-KA-002,Process,Kanban,I understand the six basic practices of the Kanban method.,Kanban practices,Flying High App Store
+PR-KA-005,Process,Kanban,I understand the importance of limiting work in progress and the role it plays in a “pull” system.,Kanban work limit,Flying High App Store
+PR-KA-003,Process,Kanban,I can build a Kanban board to effectively visualize a workflow.,Kanban board,Flying High App Store
+PR-KA-006,Process,Kanban,I understand the importance of making all policies explicit and visible to all participants.,Kanban policies,Flying High App Store
+PR-KA-001,Process,Kanban,I understand the purpose of Kanban and how it relates to other Agile methodologies.,Kanban,Flying High App Store
+PR-PM-005,Process,Project Management,I can create the project schedule and assign resources for effective implementation,Project Schedule,Flying High App Store
+PR-PM-001,Process,Project Management,"I can demonstrate the basic concepts of project management to identify milestones, monitor and adjust a project’s progression.",Basic Project Management,Flying High App Store
+PR-PM-008,Process,Project Management,I can conclude a project effectively and positively.,project conclusion,Flying High App Store
+PR-PM-007,Process,Project Management,I can apply techniques for monitoring progress and controlling the schedule,Progress monitoring,Flying High App Store
+PR-PM-003,Process,Project Management,I can create measurable project objectives and deliverables.,Project Objectives,First Flight TestFlight
+PR-PM-009,Process,Project Management,I can deconstruct a prototype to develop a learning and development backlog.,prototype deconstruction; development backlog,Flying High App Store
+PR-SC-003,Process,Scrum,"I can explain the purpose,  importance and process of the five events within Scrum",Scrum Events,Flying High App Store
+PR-SC-002,Process,Scrum,I can explain the Scrum roles and how they interact during a Sprint.,Scrum Roles,Flying High App Store
+PR-SC-001,Process,Scrum,I can describe the Scrum methodology including the five core values and the alignment with Agile.,Scrum Methodology,Flying High App Store
+PR-SC-004,Process,Scrum,"I can define,  and describe the purpose of,  artifacts within Scrum. ",Scrum Artifacts,Flying High App Store
+PS-AWA-001,Professional Skills,Self and Social Awareness,"I can demonstrate empathy for others, and act responsibly with the interests of the larger community in mind",empathy,Feeling the wind Design
+PS-AWA-003,Professional Skills,Self and Social Awareness,I can negotiate and balance diverse views and beliefs in order to progress,diversity,First Steps CBL
+PS-AWA-004,Professional Skills,Self and Social Awareness,I can respond to different ideas and values with an open mind,open-mind,Feeling the wind Design
+PS-AWA-005,Professional Skills,Self and Social Awareness,I can take responsibility for my behavior and well-being,mindfulness; behavior,Feeling the wind Design
+PS-AWA-002,Professional Skills,Self and Social Awareness,I can evaluate my strengths and weaknesses,self evaluation,Feeling the wind Design
+PS-COL-001,Professional Skills,Collaboration,I can demonstrate responsibility for collaborative work,collaborative work,First Steps CBL
+PS-COL-002,Professional Skills,Collaboration,I can facilitate team alignment and conflict management,conflict management,Spreading Wings Swift UI
+PS-COL-005,Professional Skills,Collaboration,I can develop successful teamwork through trust and respect,building relationships,First Steps CBL
+PS-COL-003,Professional Skills,Collaboration,"I can set and meet team goals, even in the face of obstacles and competing pressure",team goals,Spreading Wings Swift UI
+PS-COM-009,Professional Skills,Communication,"I can effectively use imagery, audio, and video to create stories to promote apps",App promotion,First Flight TestFlight
+PS-COM-001,Professional Skills,Communication,I can perform active listening,active listening,First Steps CBL
+PS-COM-010,Professional Skills,Communication,I can develop story beats to make stories scalable and memorable,Story beats,Flying High App Store
+PS-COM-002,Professional Skills,Communication,I can demonstrate appropriate verbal tone and body language,body language,First Steps CBL
+PS-COM-007,Professional Skills,Communication,I can create clear and appropriate presentations for different audiences and contexts,presentations,First Steps CBL
+PS-COM-011,Professional Skills,Communication,I can develop scripts and storyboards from story beats to tell stories through social media or other online formats,Scripts and Storyboards,Flying High App Store
+PS-COM-006,Professional Skills,Communication,I can collaborate and communicate effectively with teams,Team Communication,Feeling the wind Design
+PS-COM-008,Professional Skills,Communication,I can create a story that elicits an emotional response,elicit emotional response,Flying High App Store
+PS-COM-003,Professional Skills,Communication,I can effectively articulate thoughts and ideas in a variety of forms,thought articulation,First Steps CBL
+PS-COM-005,Professional Skills,Communication,I can evaluate formal and informal feedback and respond appropriately,formal and informal feedback,First Flight TestFlight
+PS-COM-004,Professional Skills,Communication,I can provide constructive feedback,constructive feedback,First Flight TestFlight
+PS-INI-001,Professional Skills,Initiative,I can set and manage personal goals.,personal goals; results driven,First Steps CBL
+PS-INN-002,Professional Skills,Innovation,I can demonstrate originality and inventiveness,original ideas,First Flight TestFlight
+PS-INN-001,Professional Skills,Innovation,I can demonstrate a range of idea creation techniques,idea creation,First Flight TestFlight
+PS-PRO-001,Professional Skills,Productivity,I can evaluate my time in order to accomplish long and short term goals,time management,Feeling the wind Design
+PS-RES-002,Professional Skills,Research,I can conduct research by selecting and applying appropriate research methods.,Research Methods,Feeling the wind Design
+PS-RES-003,Professional Skills,Research,"I can extract, interpret, synthesize, and communicate meaningful research findings.",Research Findings,Feeling the wind Design
+PS-RES-001,Professional Skills,Research,I can clearly identify the goals and objectives of my research.,Research Goals,Feeling the wind Design
+PS-LEA-002,Professional Skills,Learning,I reflect on a regular basis and use the results to become a better learner and developer.,Reflection,First Flight TestFlight
+PS-LEA-004,Professional Skills,Learning,I share my learning with others for the betterment of the community.,Sharing,First Steps CBL
+PS-LEA-001,Professional Skills,Learning,I can articulate solutions that are supported by my learning.,Solutions Identification,First Steps CBL
+PS-LEA-003,Professional Skills,Learning,I can document my learning and use it for continuous improvement.,Documentation,First Steps CBL
